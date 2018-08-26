@@ -1,18 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/picker"
+        android:theme="@style/NumberPickerTextSize"
+        android:layout_marginTop="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
 
-</android.support.constraint.ConstraintLayout>
+        <NumberPicker
+            android:id="@+id/std_year"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            >
+
+        </NumberPicker>
+        <NumberPicker
+            android:id="@+id/std_branch"
+            android:layout_width="90dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp">
+
+        </NumberPicker>
+
+        <NumberPicker
+            android:id="@+id/std_div"
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp">
+
+        </NumberPicker>
+
+        <EditText
+            android:id="@+id/std_rollno"
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Submit"
+        android:layout_below="@id/picker"
+        android:layout_marginTop="30dp"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>
