@@ -20,14 +20,14 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     NumberPicker npstdyear, npstdbranch, npstddiv;
-    EditText etvstdroll;
-    Button submitbtn;
-
-    final String Branch[] = {"Comp.", "Civil", "Mech.", "Chem.", "EnTC"};
-    final  String Years[] = {"FE", "SE", "TE", "BE"};
-    final String Divs[] = {"A", "B", "C", "D", "E", "F", "G", "H", "I"};
+    EditText etvstdroll, etv_password;
+    TextView validate_username, txt_username;
+    final String Branch[] = {"Branch","Comp.", "Civil", "Mech.", "Chem.", "EnTC"};
+    final  String Years[] = {"Year","FE", "SE", "TE", "BE"};
+    final String Divs[] = {"Div.","A", "B", "C", "D", "E", "F", "G", "H", "I"};
 
     String newYear, newBrnach, newDiv;
+    String rollno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,12 @@ public class MainActivity extends AppCompatActivity {
         npstddiv = (NumberPicker) findViewById(R.id.std_div);
 
         etvstdroll = (EditText) findViewById(R.id.std_rollno);
-        submitbtn =(Button) findViewById(R.id.btn_submit);
+        validate_username =(TextView) findViewById(R.id.validate_username);
+        txt_username = (TextView) findViewById(R.id.txt_username);
+
+        etv_password = (EditText) findViewById(R.id.etv_password);
+
+        //Number Picker for Branch Year nad Div
 
         npstdyear.setMinValue(0);
         npstdyear.setMaxValue(Years.length-1);
@@ -80,14 +85,14 @@ public class MainActivity extends AppCompatActivity {
         };
         npstddiv.setOnValueChangedListener(DivValueChange);
 
-        submitbtn.setOnClickListener(new View.OnClickListener() {
+
+
+        validate_username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, newYear+ " " + newBrnach + " " + newDiv, Toast.LENGTH_SHORT).show();
+                rollno = etvstdroll.getText().toString();
+                txt_username.setText(newYear+ newBrnach+ newDiv+ rollno);
             }
         });
-
     }
-
-
 }
