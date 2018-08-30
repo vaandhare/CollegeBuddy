@@ -1,7 +1,6 @@
 package in.indekode.collegebuddy;
 
-import android.Manifest;
-import android.app.Activity;
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,16 +11,14 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
     NumberPicker npstdyear, npstdbranch, npstddiv;
     EditText etvstdroll, etv_password;
     TextView validate_username, txt_username;
+    Button login_btn;
+
     final String Branch[] = {"Branch","Comp.", "Civil", "Mech.", "Chem.", "EnTC"};
     final  String Years[] = {"Year","FE", "SE", "TE", "BE"};
     final String Divs[] = {"Div.","A", "B", "C", "D", "E", "F", "G", "H", "I"};
@@ -41,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         etvstdroll = (EditText) findViewById(R.id.std_rollno);
         validate_username =(TextView) findViewById(R.id.validate_username);
         txt_username = (TextView) findViewById(R.id.txt_username);
+        login_btn = (Button)findViewById(R.id.btn_login);
 
         etv_password = (EditText) findViewById(R.id.etv_password);
 
@@ -94,5 +92,14 @@ public class MainActivity extends AppCompatActivity {
                 txt_username.setText(newYear+ newBrnach+ newDiv+ rollno);
             }
         });
+
+        login_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, BottomNavigationDrawer.class));
+                Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

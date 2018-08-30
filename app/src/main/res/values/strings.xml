@@ -1,7 +1,15 @@
 <resources>
     <string name="app_name">CollegeBuddy</string>
     <string name="Login">Login</string>
+    <string name="Logout">Logout</string>
+    <string name="profile">Profile</string>
+    <string name="setting">Setting</string>
     <string name="Pick_Usernme">Pick your username</string>
     <string name="username">Username</string>
     <string name="Password">Password</string>
+    <string name="Timetable">Timetable</string>
+    <string name="Attendance">Attendance</string>
+    <string name="Syllabus">Syllabus</string>
+    <string name="Event">Event</string>
+    <string name="Notification">Notification</string>
 </resources>
