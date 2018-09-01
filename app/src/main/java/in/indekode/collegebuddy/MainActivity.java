@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, BottomNavigationDrawer.class));
+                startActivity(new Intent(MainActivity.this, NavigationDrawerActivity.class));
                 Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
             }
         });

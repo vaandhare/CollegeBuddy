@@ -33,7 +33,7 @@
 
     <LinearLayout
         android:id="@+id/picker"
-        android:theme="@style/NumberPickerTextSize"
+        android:theme="@style/AppTheme.NoActionBar"
         android:layout_below="@id/tv_pickuser"
         android:layout_width="match_parent"
         android:layout_height="120dp">
