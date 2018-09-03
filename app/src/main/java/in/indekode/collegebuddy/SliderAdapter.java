@@ -37,7 +37,7 @@ public class SliderAdapter extends PagerAdapter {
     };
 
     public int[] events_bgcolor = {
-            Color.rgb(55,55,55),
+            Color.rgb(65,85,155),
             Color.rgb(239,85,85),
             Color.rgb(1,188,212)
     };

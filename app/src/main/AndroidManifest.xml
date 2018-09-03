@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -20,10 +20,13 @@
         </activity>
         <activity
             android:name=".NavigationDrawerActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/title_activity_navigation_drawer">
-        </activity>
-        <activity android:name=".EventActivity"/>
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".EventActivity" />
+        <activity android:name=".AttendanceActivity" />
+        <activity android:name=".AboutUSActivity" />
+        <activity android:name=".TimetableActivity" />
+        <activity android:name=".SyllabusActivity"></activity>
     </application>
 
 </manifest>

@@ -75,6 +75,12 @@ public class NavigationDrawerActivity extends AppCompatActivity
         if (id == R.id.action_settings) {
             return true;
         }
+        else if (id == R.id.nav_profile) {
+            return true;
+        }
+        else if (id == R.id.nav_logout) {
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -86,19 +92,27 @@ public class NavigationDrawerActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_Timetable) {
-            // Handle the camera action
+            startActivity(new Intent(this, TimetableActivity.class));
+            Toast.makeText(this, "Timetable", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_attendance) {
-
+            startActivity(new Intent(this, AttendanceActivity.class));
+            Toast.makeText(this, "Attendance", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_syllabus) {
-
+            startActivity(new Intent(this, SyllabusActivity.class));
+            Toast.makeText(this, "Syllabus", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_events) {
-            startActivity(new Intent(NavigationDrawerActivity.this, EventActivity.class));
+            startActivity(new Intent(this, EventActivity.class));
             Toast.makeText(this, "Events", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_share) {
-
+            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+            sharingIntent.setType("text/plain");
+            String shareBody = "College Buddy ";
+            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Created by Vaibhav, Rohan, Ajinkya, Sneha");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+            startActivity(Intent.createChooser(sharingIntent, "Share via"));
         } else if (id == R.id.nav_aboutUs) {
-
-
+            startActivity(new Intent(this, AboutUSActivity.class));
+            Toast.makeText(this, "About Us", Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
