@@ -6,6 +6,7 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
@@ -53,7 +55,19 @@ public class NavigationDrawerActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            new AlertDialog.Builder(this).setIcon(android.R.drawable.ic_dialog_alert).setTitle("Exit")
+                    .setMessage("Are you sure?")
+                    .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            Intent intent = new Intent(Intent.ACTION_MAIN);
+                            intent.addCategory(Intent.CATEGORY_HOME);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }).setNegativeButton("no", null).show();
         }
     }
 
@@ -73,14 +87,13 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
-        }
+            Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();        }
         else if (id == R.id.nav_profile) {
-            return true;
+            startActivity(new Intent(this, NavigationDrawerActivity.class));
+            Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
         }
         else if (id == R.id.nav_logout) {
-            return true;
-        }
+            Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -91,32 +104,44 @@ public class NavigationDrawerActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_Timetable) {
-            startActivity(new Intent(this, TimetableActivity.class));
-            Toast.makeText(this, "Timetable", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.nav_attendance) {
-            startActivity(new Intent(this, AttendanceActivity.class));
-            Toast.makeText(this, "Attendance", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.nav_syllabus) {
-            startActivity(new Intent(this, SyllabusActivity.class));
-            Toast.makeText(this, "Syllabus", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.nav_events) {
-            startActivity(new Intent(this, EventActivity.class));
-            Toast.makeText(this, "Events", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.nav_share) {
-            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-            sharingIntent.setType("text/plain");
-            String shareBody = "College Buddy ";
-            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Created by Vaibhav, Rohan, Ajinkya, Sneha");
-            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
-            startActivity(Intent.createChooser(sharingIntent, "Share via"));
-        } else if (id == R.id.nav_aboutUs) {
-            startActivity(new Intent(this, AboutUSActivity.class));
-            Toast.makeText(this, "About Us", Toast.LENGTH_SHORT).show();
-        }
+        navigation(this, id);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public static void navigation(Activity activity , int id) {
+        switch (id){
+            case R.id.nav_Timetable:
+                activity.startActivity(new Intent(activity, TimetableActivity.class));
+                Toast.makeText(activity, "Timetable", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_attendance:
+                activity.startActivity(new Intent(activity, AttendanceActivity.class));
+                Toast.makeText(activity, "Attendance", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_syllabus:
+                activity.startActivity(new Intent(activity, SyllabusActivity.class));
+                Toast.makeText(activity, "Syllabus", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_events:
+                activity.startActivity(new Intent(activity, EventActivity.class));
+                Toast.makeText(activity, "Events", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_share:
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                String shareBody = "College Buddy ";
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Created by Vaibhav, Rohan, Ajinkya, Sneha");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                activity.startActivity(Intent.createChooser(sharingIntent, "Share via"));
+                break;
+            case R.id.nav_aboutUs:
+                activity.startActivity(new Intent(activity, AboutUSActivity.class));
+                Toast.makeText(activity, "About Us", Toast.LENGTH_SHORT).show();
+                break;
+        }
+
     }
 }
