@@ -18,7 +18,7 @@
                 android:layout_height="200dp"
                 android:layout_marginLeft="80dp"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/vaibhav" />
+                android:src="@mipmap/vaibhav_round"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -26,43 +26,14 @@
                 android:text="Vaibhav Andhare"
                 android:gravity="center"
                 android:textSize="25dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold|italic"
+                android:fontFamily="cursive"/>
             <ImageView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_marginLeft="80dp"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/ajya21" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:text="Ajinkya Bhujbal"
-                android:gravity="center"
-                android:textSize="25dp"
-                android:textStyle="bold"/>
-
-            <ImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/sneha" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:text="Sneha Amin"
-                android:gravity="center"
-                android:textSize="25dp"
-                android:textStyle="bold"/>
-
-            <ImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/r" />
+                android:src="@mipmap/rohan_round" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -70,12 +41,42 @@
                 android:text="Rohan Atale"
                 android:gravity="center"
                 android:textSize="25dp"
-                android:textStyle="bold"/>
-            
+                android:textStyle="bold|italic"
+                android:fontFamily="cursive"/>
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="20dp"
+                android:src="@mipmap/ajinkya_round" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Ajinkya Bhujbal"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:textStyle="bold|italic"
+                android:fontFamily="cursive"/>
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="20dp"
+                android:src="@mipmap/sneha_round" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Sneha Amin"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:textStyle="bold|italic"
+                android:fontFamily="cursive"/>
+
         </LinearLayout>
         
-        
     </ScrollView>
-    
 
 </RelativeLayout>
