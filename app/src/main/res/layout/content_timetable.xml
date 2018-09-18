@@ -10,46 +10,46 @@
 
     <CheckBox
         android:id="@+id/cb1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/cb2"
-        android:layout_marginTop="254dp" />
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_above="@id/cb2"
+        android:layout_alignStart="@+id/cb2"/>
 
     <CheckBox
         android:id="@+id/cb2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_above="@+id/cb3"
         android:layout_alignStart="@+id/cb3" />
 
     <CheckBox
         android:id="@+id/cb3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_above="@+id/cb4"
         android:layout_alignStart="@+id/cb4" />
 
     <CheckBox
         android:id="@+id/cb4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_above="@+id/cb5"
         android:layout_alignStart="@+id/cb5" />
 
     <CheckBox
         android:id="@+id/cb5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_above="@+id/cb6"
         android:layout_alignStart="@+id/cb6" />
 
     <CheckBox
         android:id="@+id/cb6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="113dp"
+        android:layout_toLeftOf="@id/iv1"
         android:layout_toStartOf="@+id/iv1" />
 
     <ImageView

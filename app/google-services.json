@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "60021788636",
+    "firebase_url": "https://college-buddy-dypiemr.firebaseio.com",
+    "project_id": "college-buddy-dypiemr",
+    "storage_bucket": "college-buddy-dypiemr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60021788636:android:a31c5631cedb1d6d",
+        "android_client_info": {
+          "package_name": "in.indekode.collegebuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60021788636-38qtfps5serkj6ujrrkgn790vh5bu2ip.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsLv_qDTaKpupreXi38K9SSIAQLpp7jGw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

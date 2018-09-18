@@ -9,6 +9,7 @@
         android:layout_height="match_parent">
         
         <LinearLayout
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -16,7 +17,6 @@
             <ImageView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:layout_marginLeft="80dp"
                 android:layout_marginTop="20dp"
                 android:src="@mipmap/vaibhav_round"/>
 
@@ -31,7 +31,6 @@
             <ImageView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:layout_marginLeft="80dp"
                 android:layout_marginTop="20dp"
                 android:src="@mipmap/rohan_round" />
 
@@ -46,7 +45,6 @@
             <ImageView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:layout_marginLeft="80dp"
                 android:layout_marginTop="20dp"
                 android:src="@mipmap/ajinkya_round" />
 
@@ -62,7 +60,6 @@
             <ImageView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:layout_marginLeft="80dp"
                 android:layout_marginTop="20dp"
                 android:src="@mipmap/sneha_round" />
 
