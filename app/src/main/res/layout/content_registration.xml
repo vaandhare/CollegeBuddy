@@ -1,64 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main">
-
+    tools:context=".RegistrationActivity"
+    tools:showIn="@layout/activity_registration">
 
     <TextView
-        android:id="@+id/LoginText"
+        android:id="@+id/RegisterText"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:text="@string/Login"
+        android:layout_height="50dp"
+        android:text="@string/registration"
         android:gravity="center"
-        android:textSize="50sp"
+        android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/colorAccent"/>
 
     <TextView
-        android:id="@+id/tv_pickuser"
+        android:id="@+id/r_email_id"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_below="@id/LoginText"
-        android:layout_marginTop="20dp"
+        android:layout_below="@id/RegisterText"
+        android:text="Email"
+        android:gravity="start"
+        android:textSize="20sp"
+        android:paddingStart="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorAccent"/>
+
+    <EditText
+    android:id="@+id/r_etv_email"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:inputType="text"
+    android:layout_below="@id/r_email_id"
+    android:hint="@string/enter_email"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    tools:ignore="TextFields" />
+
+    <TextView
+        android:id="@+id/tv_pick_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/r_etv_email"
+        android:layout_marginTop="5dp"
         android:text="@string/Pick_Usernme"
         android:gravity="start"
         android:textSize="20sp"
         android:paddingStart="10dp"
         android:textStyle="bold"/>
 
-    <EditText
-        android:id="@+id/etv_email"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:inputType="text"
-        android:layout_below="@id/tv_pickuser"
-        android:hint="@string/enter_email"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        tools:ignore="TextFields" />
-
     <LinearLayout
-        android:id="@+id/picker"
+        android:id="@+id/r_picker"
         android:theme="@style/AppTheme.NoActionBar"
-        android:layout_below="@id/etv_email"
+        android:layout_below="@id/tv_pick_user_name"
         android:layout_width="match_parent"
         android:layout_height="120dp">
 
         <NumberPicker
-            android:id="@+id/std_year"
+            android:id="@+id/r_std_year"
             android:layout_width="70dp"
             android:layout_height="120dp"
             android:layout_marginStart="20dp">
 
         </NumberPicker>
         <NumberPicker
-            android:id="@+id/std_branch"
+            android:id="@+id/r_std_branch"
             android:layout_width="90dp"
             android:layout_height="120dp"
             android:layout_marginStart="20dp">
@@ -66,7 +78,7 @@
         </NumberPicker>
 
         <NumberPicker
-            android:id="@+id/std_div"
+            android:id="@+id/r_std_div"
             android:layout_width="50dp"
             android:layout_height="120dp"
             android:layout_marginStart="20dp">
@@ -74,7 +86,7 @@
         </NumberPicker>
 
         <EditText
-            android:id="@+id/std_rollno"
+            android:id="@+id/r_std_rollno"
             android:layout_width="50dp"
             android:layout_height="120dp"
             android:layout_marginStart="20dp"
@@ -85,83 +97,68 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/validate_username"
+        android:id="@+id/r_validate_username"
         android:layout_width="170dp"
         android:layout_height="30dp"
         android:layout_marginTop="10dp"
         android:text="@string/validate_username"
-        android:layout_below="@id/picker"
+        android:layout_below="@id/r_picker"
         android:layout_alignParentEnd="true"
         android:textSize="20sp"/>
 
     <TextView
-        android:id="@+id/txt_username"
+        android:id="@+id/r_txt_username"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:text="@string/username"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:layout_below="@id/validate_username"
+        android:layout_below="@id/r_validate_username"
         android:paddingStart="10dp"
         android:textColor="@color/colorAccent"/>
 
     <TextView
-        android:id="@+id/txt_password"
+        android:id="@+id/r_txt_password"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:text="@string/Password"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:layout_below="@id/txt_username"
+        android:layout_below="@id/r_txt_username"
         android:paddingStart="10dp"
         android:layout_marginTop="7dp"
         android:textColor="@color/colorAccent"/>
 
     <EditText
-        android:id="@+id/etv_password"
+        android:id="@+id/r_etv_password"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/txt_password"
+        android:inputType="text"
+        android:layout_below="@id/r_txt_password"
         android:hint="@string/enter_password"
-        android:paddingStart="@dimen/tendp"/>
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        tools:ignore="TextFields" />
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/r_btn_register"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_below="@id/etv_password"
+        android:layout_below="@id/r_etv_password"
         android:layout_centerInParent="true"
-        android:text="@string/Login"
+        android:text="@string/register"
         android:textSize="20sp"/>
 
     <TextView
-        android:id="@+id/attempts"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_below="@id/btn_login" />
-
-    <TextView
-        android:id="@+id/register"
+        android:id="@+id/r_already_user"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_below="@id/attempts"
-        android:text="@string/registration"
+        android:layout_below="@id/r_btn_register"
+        android:text="@string/already_user"
         android:textSize="20sp"
         android:layout_marginEnd="10dp"
         android:gravity="center"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"/>
-
-    <TextView
-        android:id="@+id/forgotpassword"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_below="@id/attempts"
-        android:text="@string/forgot_password"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:layout_marginEnd="@dimen/tendp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_centerInParent="true"/>
 
 </RelativeLayout>

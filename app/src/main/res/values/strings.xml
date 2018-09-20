@@ -37,4 +37,12 @@
     <string name="Profile">Profile</string>
     <string name="Share">Share</string>
     <string name="about_us">About Us</string>
+    <string name="title_activity_registration">RegistrationActivity</string>
+    <string name="validate_username">Validate Username</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="already_user">Already User?</string>
+    <string name="registration">Registration</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="register">Register</string>
+    <string name="enter_email">Enter Email</string>
 </resources>
