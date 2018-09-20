@@ -44,21 +44,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        npstdyear = (NumberPicker) findViewById(R.id.std_year);
-        npstdbranch = (NumberPicker) findViewById(R.id.std_branch);
-        npstddiv = (NumberPicker) findViewById(R.id.std_div);
-        attempt = (TextView) findViewById(R.id.attempts);
-        bt_register = (TextView) findViewById(R.id.register);
-        bt_forgot_password = (TextView) findViewById(R.id.forgotpassword);
+        npstdyear =  findViewById(R.id.std_year);
+        npstdbranch =  findViewById(R.id.std_branch);
+        npstddiv = findViewById(R.id.std_div);
+        attempt =  findViewById(R.id.attempts);
+        bt_register =  findViewById(R.id.register);
+        bt_forgot_password = findViewById(R.id.forgotpassword);
 
-        etvstdroll = (EditText) findViewById(R.id.std_rollno);
-        validate_username =(TextView) findViewById(R.id.validate_username);
-        txt_username = (TextView) findViewById(R.id.txt_username);
-        etv_email = (EditText) findViewById(R.id.etv_email);
+        etvstdroll =  findViewById(R.id.std_rollno);
+        validate_username = findViewById(R.id.validate_username);
+        txt_username =  findViewById(R.id.txt_username);
+        etv_email =  findViewById(R.id.etv_email);
 
-        login_btn = (Button)findViewById(R.id.btn_login);
+        login_btn = findViewById(R.id.btn_login);
 
-        etv_password = (EditText) findViewById(R.id.etv_password);
+        etv_password =  findViewById(R.id.etv_password);
 
         //Number Picker for Branch Year nad Div
 

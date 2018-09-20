@@ -3,8 +3,6 @@ package in.indekode.collegebuddy;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -42,24 +40,24 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        npstdyear = (NumberPicker) findViewById(R.id.r_std_year);
-        npstdbranch = (NumberPicker) findViewById(R.id.r_std_branch);
-        npstddiv = (NumberPicker) findViewById(R.id.r_std_div);
+        npstdyear =  findViewById(R.id.r_std_year);
+        npstdbranch =  findViewById(R.id.r_std_branch);
+        npstddiv =  findViewById(R.id.r_std_div);
 
-        reg_email = (EditText) findViewById(R.id.r_etv_email);
-        reg_password = (EditText) findViewById(R.id.r_etv_password);
-        reg_roll_no = (EditText) findViewById(R.id.r_std_rollno);
+        reg_email =  findViewById(R.id.r_etv_email);
+        reg_password =  findViewById(R.id.r_etv_password);
+        reg_roll_no =  findViewById(R.id.r_std_rollno);
 
-        reg_validate = (TextView) findViewById(R.id.r_validate_username);
-        reg_username = (TextView) findViewById(R.id.r_txt_username);
-        reg_login = (TextView) findViewById(R.id.r_already_user);
+        reg_validate =  findViewById(R.id.r_validate_username);
+        reg_username =  findViewById(R.id.r_txt_username);
+        reg_login =  findViewById(R.id.r_already_user);
 
-        bt_register = (Button) findViewById(R.id.r_btn_register);
+        bt_register =  findViewById(R.id.r_btn_register);
 
         npstdyear.setMinValue(0);
         npstdyear.setMaxValue(Years.length-1);
@@ -128,7 +126,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 if(validate()){
                     String emailuser = reg_email.getText().toString().trim();
                     String passworduser = reg_password.getText().toString().trim();
-                    String nameUser = username;
+                    //String nameUser = username;
 
                     firebaseAuth.createUserWithEmailAndPassword(emailuser, passworduser).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override

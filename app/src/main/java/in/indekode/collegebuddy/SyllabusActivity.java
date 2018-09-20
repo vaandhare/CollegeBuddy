@@ -11,12 +11,9 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
-import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -34,14 +31,14 @@ public class SyllabusActivity extends AppCompatActivity implements OnNavigationI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_syllabus);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        listView1 = (ExpandableListView)findViewById(R.id.elv);
+        listView1 = findViewById(R.id.elv);
         initData();
         listAdapter1 = new ExpandableListAdapterr(this, listDataHeader, listHash);
         listView1.setAdapter(listAdapter1);
-        listView2 = (ExpandableListView) findViewById(R.id.elv2);
+        listView2 =  findViewById(R.id.elv2);
         initData1();
         listAdapter2 = new ExpandableListAdapterr(this, listDataHeader, listHash);
         listView2.setAdapter(listAdapter2);
@@ -273,13 +270,13 @@ public class SyllabusActivity extends AppCompatActivity implements OnNavigationI
         });
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView =  findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
     }
@@ -370,7 +367,7 @@ public class SyllabusActivity extends AppCompatActivity implements OnNavigationI
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -386,7 +383,7 @@ public class SyllabusActivity extends AppCompatActivity implements OnNavigationI
         NavigationDrawerActivity.navigation(this ,id);
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
