@@ -13,44 +13,54 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_above="@id/cb2"
-        android:layout_alignStart="@+id/cb2"/>
+        android:layout_marginBottom="2sp"
+        android:layout_alignStart="@+id/cb2"
+        android:clickable="false"/>
 
     <CheckBox
         android:id="@+id/cb2"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_above="@+id/cb3"
-        android:layout_alignStart="@+id/cb3" />
+        android:layout_marginBottom="2sp"
+        android:layout_alignStart="@+id/cb3"
+        android:clickable="false"/>
 
     <CheckBox
         android:id="@+id/cb3"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_above="@+id/cb4"
-        android:layout_alignStart="@+id/cb4" />
+        android:layout_marginBottom="2sp"
+        android:layout_alignStart="@+id/cb4"
+        android:clickable="false"/>
 
     <CheckBox
         android:id="@+id/cb4"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_above="@+id/cb5"
-        android:layout_alignStart="@+id/cb5" />
+        android:layout_marginBottom="2sp"
+        android:layout_alignStart="@+id/cb5"
+        android:clickable="false"/>
 
     <CheckBox
         android:id="@+id/cb5"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_above="@+id/cb6"
-        android:layout_alignStart="@+id/cb6" />
+        android:layout_marginBottom="2sp"
+        android:layout_alignStart="@+id/cb6"
+        android:clickable="false"/>
 
     <CheckBox
         android:id="@+id/cb6"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="113dp"
-        android:layout_toLeftOf="@id/iv1"
-        android:layout_toStartOf="@+id/iv1" />
+        android:layout_marginBottom="118dp"
+        android:layout_toStartOf="@+id/iv1"
+        android:clickable="false"/>
 
     <ImageView
         android:id="@+id/iv1"
@@ -58,7 +68,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:src="@drawable/tt2" />
+        android:src="@drawable/tt2"
+        android:contentDescription="@string/Timetable" />
 
     <TextClock
         android:id="@+id/tc1"
@@ -68,7 +79,7 @@
         android:layout_marginTop="50dp"
         android:gravity="center"
         android:textColor="#000"
-        android:textSize="45dp"
+        android:textSize="45sp"
         android:textStyle="bold" />
 
 </RelativeLayout>

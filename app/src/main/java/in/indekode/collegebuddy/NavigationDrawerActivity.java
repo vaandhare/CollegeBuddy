@@ -17,8 +17,12 @@ import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        firebaseAuth = FirebaseAuth.getInstance();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -82,7 +87,11 @@ public class NavigationDrawerActivity extends AppCompatActivity
             Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
         }
         else if (id == R.id.nav_logout) {
-            Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();        }
+            firebaseAuth.signOut();
+            finish();
+            Toast.makeText(this, "Successfully Logout out", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, MainActivity.class));
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -122,13 +131,16 @@ public class NavigationDrawerActivity extends AppCompatActivity
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
                 String shareBody = "College Buddy ";
-                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Created by Vaibhav, Rohan, Ajinkya, Sneha");
                 sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
                 activity.startActivity(Intent.createChooser(sharingIntent, "Share via"));
                 break;
             case R.id.nav_aboutUs:
                 activity.startActivity(new Intent(activity, AboutUSActivity.class));
                 Toast.makeText(activity, "About Us", Toast.LENGTH_SHORT).show();
+                break;
+            case  R.id.nav_home:
+                activity.startActivity(new Intent(activity, NavigationDrawerActivity.class));
+                Toast.makeText(activity, "Home", Toast.LENGTH_SHORT).show();
                 break;
         }
 
