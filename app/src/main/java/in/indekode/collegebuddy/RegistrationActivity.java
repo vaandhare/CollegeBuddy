@@ -24,8 +24,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
     NumberPicker npstdyear, npstdbranch, npstddiv;
     EditText reg_email, reg_password, reg_roll_no;
-    TextView reg_validate, reg_username, reg_login;
-    Button bt_register;
+    TextView  reg_username, reg_login;
+    Button reg_validate, bt_register;
 
     FirebaseAuth firebaseAuth;
 
@@ -112,8 +112,8 @@ public class RegistrationActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Rrollno = reg_roll_no.getText().toString();
                 if ( !Rrollno.isEmpty()) {
-                    username = RnewYear + RnewBrnach + RnewDiv + Rrollno;
-                    reg_username.setText(un + username);
+                    Ruser_name = RnewYear + RnewBrnach + RnewDiv + Rrollno;
+                    reg_username.setText(un + Ruser_name);
                 }
                 else
                     Toast.makeText(RegistrationActivity.this, "This will cause Error!, Please choose correct values", Toast.LENGTH_SHORT).show();
@@ -126,7 +126,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 if(validate()){
                     String emailuser = reg_email.getText().toString().trim();
                     String passworduser = reg_password.getText().toString().trim();
-                    //String nameUser = username;
+                    //String nameUser = Ruser_name;
 
                     firebaseAuth.createUserWithEmailAndPassword(emailuser, passworduser).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override

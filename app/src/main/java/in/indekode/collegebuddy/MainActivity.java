@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     NumberPicker npstdyear, npstdbranch, npstddiv;
     EditText etvstdroll, etv_password, etv_email;
-    TextView validate_username, txt_username, attempt, bt_register, bt_forgot_password;
-    Button login_btn;
+    TextView LoginTxt, txt_username, attempt, bt_register, bt_forgot_password;
+    Button login_btn, validate_username;
 
     int counter = 5;
     FirebaseAuth firebaseAuth;
@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         login_btn = findViewById(R.id.btn_login);
 
         etv_password =  findViewById(R.id.etv_password);
+
+        LoginTxt = findViewById(R.id.LoginText);
 
         //Number Picker for Branch Year nad Div
 

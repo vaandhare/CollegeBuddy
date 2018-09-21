@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SyllabusActivity"
-    android:background="@color/Black">
+    tools:context=".SyllabusActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,13 +22,16 @@
                 android:text="Semester 1"
                 android:gravity="center"
                 android:textSize="20dp"
-                android:textColor="#fff"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
                 android:layout_marginTop="20dp"/>
 
             <ExpandableListView
                 android:id="@+id/elv"
                 android:layout_below="@id/tv_semester1"
                 android:layout_marginTop="10dp"
+                android:paddingStart="@dimen/tendp"
+                android:paddingEnd="@dimen/tendp"
                 android:layout_width="match_parent"
                 android:layout_height="300dp">
             </ExpandableListView>
@@ -40,7 +42,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Semester 2"
-                android:textColor="#fff"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
                 android:gravity="center"
                 android:textSize="20dp"
                 android:layout_marginTop="10dp"/>
@@ -49,6 +52,8 @@
                 android:id="@+id/elv2"
                 android:layout_below="@id/tv_semester2"
                 android:layout_marginTop="10dp"
+                android:paddingStart="@dimen/tendp"
+                android:paddingEnd="@dimen/tendp"
                 android:layout_width="match_parent"
                 android:layout_height="300dp">
             </ExpandableListView>

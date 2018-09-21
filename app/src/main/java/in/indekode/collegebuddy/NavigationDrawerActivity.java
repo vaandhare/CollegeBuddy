@@ -31,6 +31,8 @@ public class NavigationDrawerActivity extends AppCompatActivity
         Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setTitle("Profile");
+
         firebaseAuth = FirebaseAuth.getInstance();
 
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
@@ -74,17 +76,11 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();        }
-        else if (id == R.id.nav_profile) {
-            startActivity(new Intent(this, NavigationDrawerActivity.class));
-            Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
         }
         else if (id == R.id.nav_logout) {
             firebaseAuth.signOut();
@@ -92,7 +88,6 @@ public class NavigationDrawerActivity extends AppCompatActivity
             Toast.makeText(this, "Successfully Logout out", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, MainActivity.class));
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -138,11 +133,10 @@ public class NavigationDrawerActivity extends AppCompatActivity
                 activity.startActivity(new Intent(activity, AboutUSActivity.class));
                 Toast.makeText(activity, "About Us", Toast.LENGTH_SHORT).show();
                 break;
-            case  R.id.nav_home:
+            case R.id.nav_home:
                 activity.startActivity(new Intent(activity, NavigationDrawerActivity.class));
                 Toast.makeText(activity, "Home", Toast.LENGTH_SHORT).show();
                 break;
         }
-
     }
 }

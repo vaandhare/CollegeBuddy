@@ -12,43 +12,23 @@
     <TextView
         android:id="@+id/RegisterText"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="@string/registration"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:fontFamily="@font/faitorough"
         android:gravity="center"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/colorAccent"/>
-
-    <TextView
-        android:id="@+id/r_email_id"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_below="@id/RegisterText"
-        android:text="Email"
-        android:gravity="start"
-        android:textSize="20sp"
-        android:paddingStart="10dp"
-        android:textStyle="bold"
-        android:textColor="@color/colorAccent"/>
-
-    <EditText
-    android:id="@+id/r_etv_email"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:inputType="text"
-    android:layout_below="@id/r_email_id"
-    android:hint="@string/enter_email"
-    android:paddingStart="10dp"
-    android:paddingEnd="10dp"
-    tools:ignore="TextFields" />
+        android:text="@string/registration"
+        android:textColor="@color/colorAccent"
+        android:textSize="47sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_pick_user_name"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_below="@id/r_etv_email"
-        android:layout_marginTop="5dp"
+        android:layout_below="@id/RegisterText"
+        android:layout_marginTop="35dp"
+        android:textColor="@color/colorAccent"
         android:text="@string/Pick_Usernme"
         android:gravity="start"
         android:textSize="20sp"
@@ -60,7 +40,7 @@
         android:theme="@style/AppTheme.NoActionBar"
         android:layout_below="@id/tv_pick_user_name"
         android:layout_width="match_parent"
-        android:layout_height="120dp">
+        android:layout_height="110dp">
 
         <NumberPicker
             android:id="@+id/r_std_year"
@@ -87,24 +67,31 @@
 
         <EditText
             android:id="@+id/r_std_rollno"
-            android:layout_width="50dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="20dp"
+            android:layout_width="70dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="18dp"
             android:lines="1"
-            android:gravity="center_vertical"
+            android:layout_gravity="center"
+            android:hint="Roll No"
+            android:textSize="15dp"
+            android:gravity="center"
             android:inputType="numberDecimal"/>
 
     </LinearLayout>
 
-    <TextView
+    <Button
         android:id="@+id/r_validate_username"
-        android:layout_width="170dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/validate_username"
-        android:layout_below="@id/r_picker"
+        android:layout_width="210dp"
+        android:layout_height="28dp"
         android:layout_alignParentEnd="true"
-        android:textSize="20sp"/>
+        android:layout_below="@id/r_picker"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="7dp"
+        android:background="@color/colorAccent"
+        android:textColor="#fff"
+        android:text="@string/validate_username"
+        android:textSize="17sp" />
+
 
     <TextView
         android:id="@+id/r_txt_username"
@@ -113,51 +100,63 @@
         android:text="@string/username"
         android:textStyle="bold"
         android:textSize="20sp"
+        android:textColor="@color/colorAccent"
+        android:layout_marginTop="10dp"
         android:layout_below="@id/r_validate_username"
-        android:paddingStart="10dp"
-        android:textColor="@color/colorAccent"/>
+        android:paddingStart="20dp"/>
 
-    <TextView
-        android:id="@+id/r_txt_password"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:text="@string/Password"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_below="@id/r_txt_username"
-        android:paddingStart="10dp"
-        android:layout_marginTop="7dp"
-        android:textColor="@color/colorAccent"/>
 
     <EditText
-        android:id="@+id/r_etv_password"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:inputType="text"
-        android:layout_below="@id/r_txt_password"
-        android:hint="@string/enter_password"
+        android:id="@+id/r_etv_email"
+        android:layout_width="330dp"
+        android:layout_marginStart="15dp"
+        android:layout_height="40dp"
+        android:lines="1"
+        android:inputType="textEmailAddress"
+        android:layout_below="@id/r_txt_username"
+        android:hint="@string/enter_email"
+        android:layout_marginTop="15dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         tools:ignore="TextFields" />
 
+
+    <EditText
+        android:id="@+id/r_etv_password"
+        android:layout_width="330dp"
+        android:layout_marginStart="15dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/r_etv_email"
+        android:lines="1"
+        android:inputType="text"
+        android:layout_marginTop="15dp"
+        android:hint="@string/enter_password"
+        android:paddingStart="@dimen/tendp"/>
+
+
+
     <Button
         android:id="@+id/r_btn_register"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
         android:layout_below="@id/r_etv_password"
+        android:layout_marginTop="15dp"
         android:layout_centerInParent="true"
+        android:background="@color/colorAccent"
+        android:textColor="#fff"
         android:text="@string/register"
-        android:textSize="20sp"/>
+        android:textSize="17sp"/>
 
     <TextView
         android:id="@+id/r_already_user"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="20dp"
         android:layout_below="@id/r_btn_register"
         android:text="@string/already_user"
-        android:textSize="20sp"
+        android:textSize="17sp"
         android:layout_marginEnd="10dp"
         android:gravity="center"
+        android:textColor="@color/colorAccent"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"/>
 
