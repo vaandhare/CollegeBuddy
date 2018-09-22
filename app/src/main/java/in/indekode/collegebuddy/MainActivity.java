@@ -139,7 +139,10 @@ public class MainActivity extends AppCompatActivity {
         login_btn.setOnClickListener(  new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                validate(etv_email.getText().toString(), etv_password.getText().toString());
+                if ( etv_password.length()==0 || etv_email.length()==0){
+                    Toast.makeText(MainActivity.this, "Please fill all information", Toast.LENGTH_SHORT).show();
+                }else
+                    validate(etv_email.getText().toString(), etv_password.getText().toString());
             }
         });
 

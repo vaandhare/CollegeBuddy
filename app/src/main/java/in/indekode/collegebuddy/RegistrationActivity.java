@@ -33,7 +33,7 @@ public class RegistrationActivity extends AppCompatActivity {
     final  String Years[] = {"Year","FE", "SE", "TE", "BE"};
     final String Divs[] = {"Div","A", "B", "C", "D", "E", "F", "G", "H", "I"};
 
-    String email, rno,  username, password,RnewYear, RnewBrnach, RnewDiv,Ruser_name, Rrollno;
+    String email, rno,  username, password,RnewYear, RnewBrnach, RnewDiv,Ruser_name, Rrollno,ny,nb, nd;
     String un = "Username = ";
 
     @Override
@@ -162,6 +162,9 @@ public class RegistrationActivity extends AppCompatActivity {
         email = reg_email.getText().toString();
         password = reg_password.getText().toString();
         username = Ruser_name;
+        ny = RnewYear;
+        nb = RnewBrnach;
+        nd = RnewDiv;
 
         if (RnewYear.equals("Branch") || RnewBrnach.equals("Year") || RnewDiv.equals("Div") || rno.isEmpty() || RnewYear.isEmpty() || RnewDiv.isEmpty() || RnewBrnach.isEmpty() || email.isEmpty() || password.isEmpty() ){
             Toast.makeText(this, "Enter all Inputs", Toast.LENGTH_SHORT).show();
@@ -175,7 +178,7 @@ public class RegistrationActivity extends AppCompatActivity {
     public void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
-        UserProfile userProfile = new UserProfile(username, email);
+        UserProfile userProfile = new UserProfile(username, email, rno, password, ny, nb, nd);
         databaseReference.setValue(userProfile);
     }
 
