@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="in.indekode.collegebuddy">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".MainActivity"
+            android:name=".STLogin"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,10 +28,13 @@
         <activity android:name=".AttendanceActivity" />
         <activity android:name=".AboutUSActivity" />
         <activity android:name=".TimetableActivity" />
+        <activity android:name=".ForgotPassword" />
         <activity android:name=".SyllabusActivity" />
         <activity
             android:name=".RegistrationActivity"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".TeacherActivity"/>
     </application>
 
 </manifest>

@@ -46,5 +46,7 @@
     <string name="register">Register</string>
     <string name="enter_email">Enter Email</string>
     <string name="title_home">Home</string>
-    <string name="email">Email-id</string>
+    <string name="email">Email id</string>
+    <string name="roll_no">Roll No</string>
+    <string name="title_activity_stlogin">STLogin</string>
 </resources>

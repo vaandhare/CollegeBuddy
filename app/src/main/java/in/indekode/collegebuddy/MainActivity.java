@@ -153,6 +153,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        bt_forgot_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ForgotPassword.class));
+            }
+        });
+
     }
 
     private  void validate(final String username, final String passwords){

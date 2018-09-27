@@ -33,6 +33,7 @@
         android:gravity="start"
         android:textSize="20sp"
         android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:textStyle="bold"/>
 
 
@@ -73,24 +74,24 @@
             android:layout_marginStart="18dp"
             android:lines="1"
             android:layout_gravity="center"
-            android:hint="Roll No"
-            android:textSize="15dp"
+            android:hint="@string/roll_no"
+            android:textSize="15sp"
             android:gravity="center"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal"
+            tools:ignore="Autofill" />
 
     </LinearLayout>
 
     <Button
         android:id="@+id/validate_username"
-        android:layout_width="210dp"
-        android:layout_height="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
         android:layout_alignParentEnd="true"
         android:layout_below="@id/picker"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="7dp"
+        android:layout_margin="10dp"
         android:background="@color/colorAccent"
         android:textColor="#fff"
-
         android:text="@string/validate_username"
         android:textSize="17sp" />
 
@@ -102,9 +103,9 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:textColor="@color/colorAccent"
-        android:layout_marginTop="10dp"
         android:layout_below="@id/validate_username"
-        android:paddingStart="20dp"/>
+        android:paddingStart="20dp"
+        android:paddingEnd="10dp"/>
 
     <EditText
         android:id="@+id/etv_email"
@@ -118,7 +119,7 @@
         android:layout_marginTop="15dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
-        tools:ignore="TextFields" />
+        tools:ignore="Autofill" />
 
 
     <EditText
@@ -128,17 +129,19 @@
         android:layout_height="40dp"
         android:layout_below="@id/etv_email"
         android:lines="1"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:layout_marginTop="15dp"
         android:hint="@string/enter_password"
-        android:paddingStart="@dimen/tendp"/>
+        android:paddingStart="@dimen/tendp"
+        android:paddingEnd="10dp"
+        tools:ignore="Autofill" />
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="130dp"
+        android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_below="@id/etv_password"
-        android:layout_marginTop="15dp"
+        android:layout_margin="15dp"
         android:layout_centerInParent="true"
         android:background="@color/colorAccent"
         android:textColor="#fff"
@@ -160,7 +163,6 @@
         android:layout_alignParentStart="true"
         android:layout_below="@id/attempts"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="45dp"
         android:gravity="center"
         android:paddingStart="10dp"
         android:text="@string/registration"
@@ -175,10 +177,12 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@id/attempts"
         android:layout_marginEnd="@dimen/tendp"
-        android:layout_marginTop="45dp"
         android:gravity="center"
+        android:paddingEnd="1dp"
+        android:paddingStart="1dp"
         android:text="@string/forgot_password"
         android:textColor="@color/colorAccent"
-        android:textSize="17sp" />
+        android:textSize="17sp"
+        tools:ignore="RelativeOverlap" />
 
 </RelativeLayout>
