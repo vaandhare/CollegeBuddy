@@ -106,7 +106,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/D:/System/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_home_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/D:/System/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/social/ic_notifications_active_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -116,7 +116,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="home" />
+                            <entry key="outputName" value="notice" />
                             <entry key="sourceFile" value="C:\Users\Andhare" />
                           </map>
                         </option>

@@ -4,6 +4,104 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/txt_profile"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/Profile"
+        android:gravity="center"
+        android:layout_marginTop="95dp"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/faitorough"
+        android:textColor="@color/colorAccent"/>
+
+    <TextView
+        android:id="@+id/usr_name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/txt_profile"
+        android:textSize="20dp"
+        android:text="Name"
+        android:paddingStart="20dp"
+        android:textColor="@color/colorAccent"
+        android:gravity="center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/usr_usrname"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/usr_name"
+        android:textSize="20dp"
+        android:text="Username: "
+        android:paddingStart="20dp"
+        android:textColor="@color/colorAccent"
+        android:gravity="center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/usr_year"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/usr_usrname"
+        android:textSize="20dp"
+        android:text="Year"
+        android:paddingStart="20dp"
+        android:textColor="@color/colorAccent"
+        android:gravity="center_vertical"
+        />
+    <TextView
+        android:id="@+id/usr_branch"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/usr_year"
+        android:textSize="20dp"
+        android:text="Branch"
+        android:textColor="@color/colorAccent"
+        android:paddingStart="20dp"
+        android:gravity="center_vertical"
+        />
+    <TextView
+        android:id="@+id/usr_div"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/usr_branch"
+        android:textSize="20dp"
+        android:text="Division"
+        android:textColor="@color/colorAccent"
+        android:paddingStart="20dp"
+        android:gravity="center_vertical"
+        />
+    <TextView
+        android:id="@+id/usr_rn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/usr_div"
+        android:textSize="20dp"
+        android:text="RollNo"
+        android:textColor="@color/colorAccent"
+        android:paddingStart="20dp"
+        android:gravity="center_vertical"
+        />
+    <TextView
+        android:id="@+id/usr_email"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/usr_rn"
+        android:textSize="20dp"
+        android:textColor="@color/colorAccent"
+        android:text="Email"
+        android:paddingStart="20dp"
+        android:gravity="center_vertical"
+        />
 
 
 </RelativeLayout>

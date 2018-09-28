@@ -1,18 +1,29 @@
 package in.indekode.collegebuddy;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import android.view.MenuItem;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextClock;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 
@@ -26,6 +37,10 @@ public class TimetableActivity extends AppCompatActivity implements NavigationVi
      CheckBox cbb4;
      CheckBox cbb5;
      CheckBox cbb6;
+     String branch, year;
+     ImageView timetable;
+     FirebaseAuth firebaseAuth;
+     FirebaseDatabase firebaseDatabase;
 
 
     @Override
@@ -34,6 +49,7 @@ public class TimetableActivity extends AppCompatActivity implements NavigationVi
         setContentView(R.layout.activity_timetable);
         Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Timetable");
 
         tc = findViewById(R.id.tc1);
         cbb1 = findViewById(R.id.cb1);
@@ -42,15 +58,41 @@ public class TimetableActivity extends AppCompatActivity implements NavigationVi
         cbb4 = findViewById(R.id.cb4);
         cbb5 = findViewById(R.id.cb5);
         cbb6 = findViewById(R.id.cb6);
+        timetable = findViewById(R.id.iv);
 
-        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
+                year =  userProfile.getYear();
+                branch = userProfile.getBranch();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(TimetableActivity.this,databaseError.getCode(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+//        switch (branch){
+////            case "Comp":
+////                timetable.setImageResource(R.drawable.ttcomp);
+////                break;
+////            case "Mech":
+////                timetable.setImageResource(R.drawable.ttmech);
+////                break;
+////            case "Civil":
+////                timetable.setImageResource(R.drawable.ttcivil);
+////                break;
+////            case "EnTC":
+////                timetable.setImageResource(R.drawable.ttentc);
+////                break;
+////        }
 
         Calendar c = Calendar.getInstance();
         int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
@@ -87,6 +129,15 @@ public class TimetableActivity extends AppCompatActivity implements NavigationVi
                 break;
         }
 
+        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
 
     }
 
@@ -96,7 +147,19 @@ public class TimetableActivity extends AppCompatActivity implements NavigationVi
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            new AlertDialog.Builder(this).setIcon(android.R.drawable.ic_dialog_alert).setTitle("Exit")
+                    .setMessage("Are you sure?")
+                    .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            Intent intent = new Intent(Intent.ACTION_MAIN);
+                            intent.addCategory(Intent.CATEGORY_HOME);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }).setNegativeButton("no", null).show();
         }
     }
 

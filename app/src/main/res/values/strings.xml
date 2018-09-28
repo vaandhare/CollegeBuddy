@@ -49,4 +49,7 @@
     <string name="email">Email id</string>
     <string name="roll_no">Roll No</string>
     <string name="title_activity_stlogin">STLogin</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="notice">Notice</string>
+    <string name="title_activity_notice">NoticeActivity</string>
 </resources>

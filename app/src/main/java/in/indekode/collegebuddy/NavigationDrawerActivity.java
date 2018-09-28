@@ -15,14 +15,23 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     FirebaseAuth firebaseAuth;
+    TextView pn,pun,py,pb,pd,prn,pemail;
+    FirebaseDatabase firebaseDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +41,38 @@ public class NavigationDrawerActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setTitle("Profile");
+        pn = (TextView)findViewById(R.id.usr_name);
+        pun = findViewById(R.id.usr_usrname);
+        py = (TextView)findViewById(R.id.usr_year);
+        pb = (TextView)findViewById(R.id.usr_branch);
+        pd = (TextView)findViewById(R.id.usr_div);
+        prn = (TextView)findViewById(R.id.usr_rn);
+        pemail = (TextView)findViewById(R.id.usr_email);
+
 
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
+        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
+                pn.setText("Name: " + userProfile.getName1());
+                pun.setText("Username: "+userProfile.getUsername1());
+                py.setText("Year: " + userProfile.getYear());
+                pb.setText("Branch: " + userProfile.getBranch());
+                pd.setText("Division: " + userProfile.getDivision());
+                prn.setText("RollNo: " + userProfile.getRno());
+                pemail.setText("Email: " + userProfile.getEmail1());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(NavigationDrawerActivity.this,databaseError.getCode(),Toast.LENGTH_SHORT).show();
+            }
+        });
 
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -136,6 +175,10 @@ public class NavigationDrawerActivity extends AppCompatActivity
             case R.id.nav_home:
                 activity.startActivity(new Intent(activity, NavigationDrawerActivity.class));
                 Toast.makeText(activity, "Home", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_notice:
+                activity.startActivity(new Intent(activity, NoticeActivity.class));
+                Toast.makeText(activity, "Notice", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

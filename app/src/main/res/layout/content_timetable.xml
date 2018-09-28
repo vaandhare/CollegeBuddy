@@ -5,7 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TimetableActivity">
+    tools:context=".TimetableActivity"
+    android:background="#fff">
 
 
     <CheckBox
@@ -59,16 +60,16 @@
         android:layout_height="30dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="118dp"
-        android:layout_toStartOf="@+id/iv1"
+        android:layout_toStartOf="@+id/iv"
         android:clickable="false"/>
 
     <ImageView
-        android:id="@+id/iv1"
+        android:id="@+id/iv"
         android:layout_width="339dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:src="@drawable/tt2"
+        android:src="@drawable/ttfe"
         android:contentDescription="@string/Timetable" />
 
     <TextClock

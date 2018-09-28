@@ -8,12 +8,13 @@ public class UserProfile {
     public String year;
     public String branch;
     public String division;
+    public String name1;
 
     public UserProfile() {
 
     }
 
-    public UserProfile( String username1, String email1, String Rollno, String password1, String year, String branch, String division) {
+    public UserProfile( String username1, String email1, String Rollno, String password1, String year, String branch, String division, String name1) {
         this.username1 = username1;
         this.email1 = email1;
         this.rno = Rollno;
@@ -21,6 +22,7 @@ public class UserProfile {
         this.year = year;
         this.branch=branch;
         this.division = division;
+        this.name1 = name1;
     }
 
 
@@ -79,5 +81,13 @@ public class UserProfile {
 
     public void setDivision(String division) {
         this.division = division;
+    }
+
+    public String getName1() {
+        return name1;
+    }
+
+    public void setName1(String name1) {
+        this.name1 = name1;
     }
 }

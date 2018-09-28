@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegistrationActivity extends AppCompatActivity {
 
     NumberPicker npstdyear, npstdbranch, npstddiv;
-    EditText reg_email, reg_password, reg_roll_no;
+    EditText reg_email, reg_password, reg_roll_no, reg_name;
     TextView  reg_username, reg_login;
     Button reg_validate, bt_register;
 
@@ -31,9 +31,9 @@ public class RegistrationActivity extends AppCompatActivity {
 
     final String Branch[] = {"Branch","Comp", "Civil", "Mech", "Chem", "EnTC"};
     final  String Years[] = {"Year","FE", "SE", "TE", "BE"};
-    final String Divs[] = {"Div","A", "B", "C", "D", "E", "F", "G", "H", "I"};
+    final String Divs[] = {"Div","A", "B", "C"};
 
-    String email, rno,  username, password,RnewYear, RnewBrnach, RnewDiv,Ruser_name, Rrollno,ny,nb, nd;
+    String email, rno,  username, password,RnewYear, RnewBrnach, RnewDiv,Ruser_name, Rrollno,ny,nb, nd, name;
     String un = "Username = ";
 
     @Override
@@ -58,6 +58,7 @@ public class RegistrationActivity extends AppCompatActivity {
         reg_login =  findViewById(R.id.r_already_user);
 
         bt_register =  findViewById(R.id.r_btn_register);
+        reg_name = findViewById(R.id.r_etv_name);
 
         npstdyear.setMinValue(0);
         npstdyear.setMaxValue(Years.length-1);
@@ -165,6 +166,7 @@ public class RegistrationActivity extends AppCompatActivity {
         ny = RnewYear;
         nb = RnewBrnach;
         nd = RnewDiv;
+        name = reg_name.getText().toString();
 
         if (RnewYear.equals("Branch") || RnewBrnach.equals("Year") || RnewDiv.equals("Div") || rno.isEmpty() || RnewYear.isEmpty() || RnewDiv.isEmpty() || RnewBrnach.isEmpty() || email.isEmpty() || password.isEmpty() ){
             Toast.makeText(this, "Enter all Inputs", Toast.LENGTH_SHORT).show();
@@ -178,7 +180,7 @@ public class RegistrationActivity extends AppCompatActivity {
     public void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
-        UserProfile userProfile = new UserProfile(username, email, rno, password, ny, nb, nd);
+        UserProfile userProfile = new UserProfile(username, email, rno, password, ny, nb, nd, name);
         databaseReference.setValue(userProfile);
     }
 

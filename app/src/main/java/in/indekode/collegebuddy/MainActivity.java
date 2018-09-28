@@ -31,11 +31,11 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     ProgressDialog progressDialog;
 
-    final String Branch[] = {"Branch","Comp", "Civil", "Mech", "Chem", "EnTC"};
-    final  String Years[] = {"Year","FE", "SE", "TE", "BE"};
-    final String Divs[] = {"Div","A", "B", "C", "D", "E", "F", "G", "H", "I"};
+    public final String Branch[] = {"Branch","Comp", "Civil", "Mech", "Chem", "EnTC"};
+    public final  String Years[] = {"Year","FE", "SE", "TE", "BE"};
+    public final String Divs[] = {"Div","A", "B", "C"};
 
-    String newYear, newBrnach, newDiv;
+    public  String newYear, newBrnach, newDiv;
     String rollno, user_name;
     String un = "Username = ";
 
@@ -159,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ForgotPassword.class));
             }
         });
+
 
     }
 
