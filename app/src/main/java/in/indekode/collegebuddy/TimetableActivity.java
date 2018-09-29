@@ -71,6 +71,33 @@ public class TimetableActivity extends AppCompatActivity implements NavigationVi
                 UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
                 year =  userProfile.getYear();
                 branch = userProfile.getBranch();
+
+                switch (year){
+                    case "FE" :
+                        timetable.setImageResource(R.drawable.ttfe);
+                        break;
+                    case "SE":
+                    case "TE":
+                    case "BE":
+                        switch (branch){
+                            case "Comp":
+                                timetable.setImageResource(R.drawable.ttcomp);
+                                break;
+                            case "Mech":
+                                timetable.setImageResource(R.drawable.ttmech);
+                                break;
+                            case "Civil":
+                                timetable.setImageResource(R.drawable.ttcivil);
+                                break;
+                            case "EnTC":
+                                timetable.setImageResource(R.drawable.ttentc);
+                                break;
+                            case "Chem":
+                                timetable.setImageResource(R.drawable.ttchem);
+                                break;
+                        }
+                }
+
             }
 
             @Override
@@ -79,20 +106,6 @@ public class TimetableActivity extends AppCompatActivity implements NavigationVi
             }
         });
 
-//        switch (branch){
-////            case "Comp":
-////                timetable.setImageResource(R.drawable.ttcomp);
-////                break;
-////            case "Mech":
-////                timetable.setImageResource(R.drawable.ttmech);
-////                break;
-////            case "Civil":
-////                timetable.setImageResource(R.drawable.ttcivil);
-////                break;
-////            case "EnTC":
-////                timetable.setImageResource(R.drawable.ttentc);
-////                break;
-////        }
 
         Calendar c = Calendar.getInstance();
         int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
@@ -163,13 +176,14 @@ public class TimetableActivity extends AppCompatActivity implements NavigationVi
         }
     }
 
+
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         NavigationDrawerActivity.navigation(this ,id);
-
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
