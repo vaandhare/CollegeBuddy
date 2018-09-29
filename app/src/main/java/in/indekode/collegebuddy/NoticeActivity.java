@@ -1,15 +1,13 @@
 package in.indekode.collegebuddy;
 
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,17 +15,18 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class AboutUSActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class NoticeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener
+{
 
     FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_us);
-        Toolbar toolbar =  findViewById(R.id.toolbar);
+        setContentView(R.layout.activity_notice);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("About Us");
+        getSupportActionBar().setTitle("Notice");
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -37,10 +36,11 @@ public class AboutUSActivity extends AppCompatActivity implements NavigationView
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView =  findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
     }
+
 
     @Override
     public void onBackPressed() {
@@ -77,7 +77,7 @@ public class AboutUSActivity extends AppCompatActivity implements NavigationView
 
         NavigationDrawerActivity.navigation(this ,id);
 
-        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

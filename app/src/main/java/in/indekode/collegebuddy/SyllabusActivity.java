@@ -13,9 +13,14 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +31,7 @@ public class SyllabusActivity extends AppCompatActivity implements OnNavigationI
      ExpandableListAdapterr listAdapter1, listAdapter2 ;
      List<String> listDataHeader;
      HashMap<String,List<String>> listHash;
-
+     FirebaseAuth firebaseAuth;
 
 
     @Override
@@ -36,6 +41,8 @@ public class SyllabusActivity extends AppCompatActivity implements OnNavigationI
         Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Syllabus");
+
+        firebaseAuth = FirebaseAuth.getInstance();
 
         listView1 = findViewById(R.id.elv);
         initData();
@@ -370,25 +377,32 @@ public class SyllabusActivity extends AppCompatActivity implements OnNavigationI
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            new AlertDialog.Builder(this).setIcon(android.R.drawable.ic_dialog_alert).setTitle("Exit")
-                    .setMessage("Are you sure?")
-                    .setPositiveButton("yes", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                            Intent intent = new Intent(Intent.ACTION_MAIN);
-                            intent.addCategory(Intent.CATEGORY_HOME);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(intent);
-                            finish();
-                        }
-                    }).setNegativeButton("no", null).show();
-        }
+        startActivity(new Intent(this, NavigationDrawerActivity.class));
     }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.global, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
+        }
+        else if (id == R.id.nav_logout) {
+            firebaseAuth.signOut();
+            finish();
+            Toast.makeText(this, "Successfully Logout out", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, MainActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
