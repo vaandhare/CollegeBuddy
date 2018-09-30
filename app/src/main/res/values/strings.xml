@@ -53,4 +53,5 @@
     <string name="title_activity_notice">NoticeActivity</string>
     <string name="department">Department</string>
     <string name="enter_password">Enter Password</string>
+    <string name="title_activity_teacher_notice">TeacherNoticeActivity</string>
 </resources>

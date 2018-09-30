@@ -106,7 +106,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/D:/System/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/social/ic_notifications_active_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/D:/System/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/navigation/ic_close_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -116,7 +116,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="notice" />
+                            <entry key="color" value="f9f9f9" />
+                            <entry key="outputName" value="ic_float1_close" />
                             <entry key="sourceFile" value="C:\Users\Andhare" />
                           </map>
                         </option>
