@@ -73,7 +73,7 @@ public class LoginTeacherActivity extends AppCompatActivity {
                             techr_spinner.setAdapter(comp);
                         }
 
-                        if(Branches[position].equals("Mec")){
+                        if(Branches[position].equals("Mech")){
                             mech.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                             techr_spinner.setAdapter(mech);
                         }

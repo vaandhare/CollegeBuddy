@@ -20,6 +20,11 @@ import android.widget.ExpandableListView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,6 +37,8 @@ public class SyllabusActivity extends AppCompatActivity implements OnNavigationI
      List<String> listDataHeader;
      HashMap<String,List<String>> listHash;
      FirebaseAuth firebaseAuth;
+     FirebaseDatabase firebaseDatabase;
+    String sbranch, syear;
 
 
     @Override
@@ -42,7 +49,34 @@ public class SyllabusActivity extends AppCompatActivity implements OnNavigationI
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Syllabus");
 
+        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView =  findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
+        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
+                syear =  userProfile.getYear();
+                sbranch = userProfile.getBranch();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(SyllabusActivity.this,databaseError.getCode(),Toast.LENGTH_SHORT).show();
+            }
+        });
 
         listView1 = findViewById(R.id.elv);
         initData();
@@ -54,12 +88,9 @@ public class SyllabusActivity extends AppCompatActivity implements OnNavigationI
         listView2.setAdapter(listAdapter2);
 
         listView1.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-
             int PI = -1;
-
             @Override
             public void onGroupExpand(int position) {
-
                 if ( position != PI){
                     listView1.collapseGroup(PI);
                     PI = position;
@@ -68,12 +99,9 @@ public class SyllabusActivity extends AppCompatActivity implements OnNavigationI
         });
 
         listView2.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-
             int PI = -1;
-
             @Override
             public void onGroupExpand(int position) {
-
                 if ( position != PI){
                     listView2.collapseGroup(PI);
                     PI = position;
@@ -82,99 +110,66 @@ public class SyllabusActivity extends AppCompatActivity implements OnNavigationI
         });
 
         //  For List 1
-
         listView1.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
-
                 // For Parent 0
-
-                if(i == 0 && i1 == 0)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.co.in"));
-                    startActivity(bintent);
+                if(i == 0 && i1 == 0) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.co.in")));
                 }
-                else if(i == 0 && i1 == 1)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www3.borutoget.info"));
-                    startActivity(bintent);
+                else if(i == 0 && i1 == 1) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www3.borutoget.info")));
                 }
-                else if(i == 0 && i1 == 2)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://in.linkedin.com"));
-                    startActivity(bintent);
+                else if(i == 0 && i1 == 2) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://in.linkedin.com")));
                 }
 
                 // For Parent 1
 
-                if(i == 1 && i1 == 0)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://gaana.com"));
-                    startActivity(bintent);
+                if(i == 1 && i1 == 0) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://gaana.com")));
                 }
-                else if(i == 1 && i1 == 1)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://1337x.to"));
-                    startActivity(bintent);
+                else if(i == 1 && i1 == 1) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://1337x.to")));
                 }
-                else if(i == 1 && i1 == 2)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.songsmp3.live"));
-                    startActivity(bintent);
+                else if(i == 1 && i1 == 2) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.songsmp3.live")));
                 }
 
                 // For Parent 2
 
-                if(i == 2 && i1 == 0)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://mp3skulls.to"));
-                    startActivity(bintent);
+                if(i == 2 && i1 == 0) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://mp3skulls.to")));
                 }
-                else if(i == 2 && i1 == 1)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.songspk.wiki"));
-                    startActivity(bintent);
+                else if(i == 2 && i1 == 1) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.songspk.wiki")));
                 }
-                else if(i == 2 && i1 == 2)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://convert2mp3.net/en/index.php?p=home"));
-                    startActivity(bintent);
+                else if(i == 2 && i1 == 2) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://convert2mp3.net/en/index.php?p=home")));
                 }
 
                 // For Parent 3
 
-                if(i == 3 && i1 == 0)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://likewap.top/catlist/47704/320-kbps.html"));
-                    startActivity(bintent);
+                if(i == 3 && i1 == 0) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://likewap.top/catlist/47704/320-kbps.html")));
                 }
-                else if(i == 3 && i1 == 1)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://yts.am"));
-                    startActivity(bintent);
+                else if(i == 3 && i1 == 1) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://yts.am")));
                 }
-                else if(i == 3 && i1 == 2)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www8.fmovies.se"));
-                    startActivity(bintent);
+                else if(i == 3 && i1 == 2) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www8.fmovies.se")));
                 }
 
                 // For Parent 4
 
-                if(i == 4 && i1 == 0)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.027ppt.com"));
-                    startActivity(bintent);
+                if(i == 4 && i1 == 0) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.027ppt.com")));
                 }
-                else if(i == 4 && i1 == 1)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://clashofclans.com/blog"));
-                    startActivity(bintent);
+                else if(i == 4 && i1 == 1) {
+                    startActivity( new Intent(Intent.ACTION_VIEW, Uri.parse("https://clashofclans.com/blog")));
                 }
-                else if(i == 4 && i1 == 2)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://sofdl.com"));
-                    startActivity(bintent);
+                else if(i == 4 && i1 == 2) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://sofdl.com")));
                 }
                 return false;
             }
@@ -187,118 +182,67 @@ public class SyllabusActivity extends AppCompatActivity implements OnNavigationI
             public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
 
                 // For Parent 0
-
-                if(i == 0 && i1 == 0)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.co.in"));
-                    startActivity(bintent);
+                if(i == 0 && i1 == 0) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.co.in")));
                 }
-                else if(i == 0 && i1 == 1)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www3.borutoget.info"));
-                    startActivity(bintent);
+                else if(i == 0 && i1 == 1) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www3.borutoget.info")));
                 }
-                else if(i == 0 && i1 == 2)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://in.linkedin.com"));
-                    startActivity(bintent);
+                else if(i == 0 && i1 == 2) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://in.linkedin.com")));
                 }
 
                 // For Parent 1
-
-                if(i == 1 && i1 == 0)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://gaana.com"));
-                    startActivity(bintent);
+                if(i == 1 && i1 == 0) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://gaana.com")));
                 }
-                else if(i == 1 && i1 == 1)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://1337x.to"));
-                    startActivity(bintent);
+                else if(i == 1 && i1 == 1) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://1337x.to")));
                 }
-                else if(i == 1 && i1 == 2)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.songsmp3.live"));
-                    startActivity(bintent);
+                else if(i == 1 && i1 == 2) {
+                    startActivity( new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.songsmp3.live")));
                 }
 
                 // For Parent 2
-
-                if(i == 2 && i1 == 0)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://mp3skulls.to"));
-                    startActivity(bintent);
+                if(i == 2 && i1 == 0) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://mp3skulls.to")));
                 }
-                else if(i == 2 && i1 == 1)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.songspk.wiki"));
-                    startActivity(bintent);
+                else if(i == 2 && i1 == 1) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.songspk.wiki")));
                 }
-                else if(i == 2 && i1 == 2)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://convert2mp3.net/en/index.php?p=home"));
-                    startActivity(bintent);
+                else if(i == 2 && i1 == 2) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://convert2mp3.net/en/index.php?p=home")));
                 }
 
                 // For Parent 3
-
-                if(i == 3 && i1 == 0)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://likewap.top/catlist/47704/320-kbps.html"));
-                    startActivity(bintent);
+                if(i == 3 && i1 == 0) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://likewap.top/catlist/47704/320-kbps.html")));
                 }
-                else if(i == 3 && i1 == 1)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://yts.am"));
-                    startActivity(bintent);
+                else if(i == 3 && i1 == 1) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://yts.am")));
                 }
-                else if(i == 3 && i1 == 2)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www8.fmovies.se"));
-                    startActivity(bintent);
+                else if(i == 3 && i1 == 2) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www8.fmovies.se")));
                 }
-
                 // For Parent 4
-
-                if(i == 4 && i1 == 0)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.027ppt.com"));
-                    startActivity(bintent);
+                if(i == 4 && i1 == 0) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.027ppt.com")));
                 }
-                else if(i == 4 && i1 == 1)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://clashofclans.com/blog"));
-                    startActivity(bintent);
+                else if(i == 4 && i1 == 1) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://clashofclans.com/blog")));
                 }
-                else if(i == 4 && i1 == 2)
-                {
-                    Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://sofdl.com"));
-                    startActivity(bintent);
+                else if(i == 4 && i1 == 2) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://sofdl.com")));
                 }
                 return false;
             }
         });
-
-
-        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView =  findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
     }
 
     private void initData() {
         listDataHeader = new ArrayList<>();
         listHash = new HashMap<>();
-        listDataHeader.add("Theory Of Computation");
-        listDataHeader.add("Database Management System");
-        listDataHeader.add("Software Engineering & Project Management");
-        listDataHeader.add("Information System & Economical Engineering");
-        listDataHeader.add("Compute Networks");
+        fesem1();
 
         List<String> toc = new ArrayList<>();
         toc.add("Links");
@@ -336,11 +280,7 @@ public class SyllabusActivity extends AppCompatActivity implements OnNavigationI
     private void initData1() {
         listDataHeader = new ArrayList<>();
         listHash = new HashMap<>();
-        listDataHeader.add("Design and Analysis of Algorithms");
-        listDataHeader.add("Systems Programming and Operating System");
-        listDataHeader.add(" Embedded Systems and Internet of Things");
-        listDataHeader.add(" Software Modeling and Design");
-        listDataHeader.add("Web Technology");
+        fesem2();
 
         List<String> daa = new ArrayList<>();
         daa.add("Links");
@@ -374,6 +314,49 @@ public class SyllabusActivity extends AppCompatActivity implements OnNavigationI
         listHash.put(listDataHeader.get(4),wt);
 
     }
+
+    public void compsem1(){
+        listDataHeader.add("Theory Of Computation");
+        listDataHeader.add("Database Management System");
+        listDataHeader.add("Software Engineering & Project Management");
+        listDataHeader.add("Information System & Economical Engineering");
+        listDataHeader.add("Compute Networks");
+    }
+
+    public void compsem2(){
+        listDataHeader.add("Design and Analysis of Algorithms");
+        listDataHeader.add("Systems Programming and Operating System");
+        listDataHeader.add("Embedded Systems and Internet of Things");
+        listDataHeader.add("Software Modeling and Design");
+        listDataHeader.add("Web Technology");
+    }
+    public void fesem1(){
+        listDataHeader.add("Mathematics I");
+        listDataHeader.add("Engineering Physics");
+        listDataHeader.add("Basic Electrical Engineering");
+        listDataHeader.add("Basic Civil and Environmental Engineering");
+        listDataHeader.add("Engineering Graphics I");
+        listDataHeader.add("Fundamental Programming Language I");
+    }
+    public void fesem2(){
+        listDataHeader.add("Mathematics II");
+        listDataHeader.add("Engineering Chemistry");
+        listDataHeader.add("Basic Electronics Engineering");
+        listDataHeader.add("Basic Mechanical Engineering");
+        listDataHeader.add("Engineering Mechanics");
+        listDataHeader.add("Fundamental Programming Language II");
+    }
+    public void mechsem1(){
+
+    }
+    public void mechsem2(){
+
+    }
+    public void chemsem1(){
+
+    }
+    
+
 
     @Override
     public void onBackPressed() {
