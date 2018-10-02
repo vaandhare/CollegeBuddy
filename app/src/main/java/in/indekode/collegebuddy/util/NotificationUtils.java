@@ -67,7 +67,7 @@ public class NotificationUtils {
                 mContext);
 
         final Uri alarmSound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE
-                + "://" + mContext.getPackageName() + "/raw/notification");
+                + "://" + mContext.getPackageName() + "/raw/notification.mp3");
 
         if (!TextUtils.isEmpty(imageUrl)) {
 

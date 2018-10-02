@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TeacherActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/send_notice"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="Send Notice"
+        android:textSize="25sp"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/update_attendance"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="25dp"
+        android:layout_below="@id/send_notice"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="@string/Attendance"
+        android:textSize="25sp"
+        android:textColor="#fff" />
+
+</RelativeLayout>
