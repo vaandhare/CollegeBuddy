@@ -26,6 +26,5 @@ public class TeacherActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }
