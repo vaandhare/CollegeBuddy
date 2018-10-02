@@ -95,85 +95,101 @@ public class SyllabusActivity extends AppCompatActivity implements OnNavigationI
                 // For Parent 0
                 if(i == 0 && i1 == 0) {
                     Intent intent = new Intent(SyllabusActivity.this,WebviewActivity.class);
-                    intent.putExtra("url","https://www.google.co.in");
+                    intent.putExtra("url","http://indekode.ml/CollegeBuddy/SyllabusLinks/FE.html");
                     startActivity(intent);
                 }
                 else if(i == 0 && i1 == 1) {
                     Intent intent = new Intent(SyllabusActivity.this,WebviewActivity.class);
-                    intent.putExtra("url","http://www3.borutoget.info");
+                    intent.putExtra("url","http://indekode.ml/CollegeBuddy/SyllabusLinks/FE.html");
                     startActivity(intent);
                 }
                 else if(i == 0 && i1 == 2) {
                     Intent intent = new Intent(SyllabusActivity.this,WebviewActivity.class);
-                    intent.putExtra("url","https://in.linkedin.com");
+                    intent.putExtra("url","http://indekode.ml/CollegeBuddy/SyllabusLinks/FE.html");
                     startActivity(intent);
                 }
 
                 // For Parent 1
                 if(i == 1 && i1 == 0) {
                     Intent intent = new Intent(SyllabusActivity.this,WebviewActivity.class);
-                    intent.putExtra("url","https://gaana.com");
+                    intent.putExtra("url","http://indekode.ml/CollegeBuddy/SyllabusLinks/TEComp.html");
                     startActivity(intent);
                 }
                 else if(i == 1 && i1 == 1) {
                     Intent intent = new Intent(SyllabusActivity.this,WebviewActivity.class);
-                    intent.putExtra("url","https://1337x.to");
+                    intent.putExtra("url","http://indekode.ml/CollegeBuddy/SyllabusLinks/TEComp.html");
                     startActivity(intent);
                 }
                 else if(i == 1 && i1 == 2) {
                     Intent intent = new Intent(SyllabusActivity.this,WebviewActivity.class);
-                    intent.putExtra("url","https://www.songsmp3.live");
+                    intent.putExtra("url","http://indekode.ml/CollegeBuddy/SyllabusLinks/TEComp.html");
                     startActivity(intent);
                 }
 
                 // For Parent 2
                 if(i == 2 && i1 == 0) {
                     Intent intent = new Intent(SyllabusActivity.this,WebviewActivity.class);
-                    intent.putExtra("url","https://mp3skulls.to");
+                    intent.putExtra("url","http://indekode.ml/CollegeBuddy/SyllabusLinks/TEMech.html");
                     startActivity(intent);
                 }
                 else if(i == 2 && i1 == 1) {
                     Intent intent = new Intent(SyllabusActivity.this,WebviewActivity.class);
-                    intent.putExtra("url","https://www.songspk.wiki");
+                    intent.putExtra("url","http://indekode.ml/CollegeBuddy/SyllabusLinks/TEMech.html");
                     startActivity(intent);
                 }
                 else if(i == 2 && i1 == 2) {
                     Intent intent = new Intent(SyllabusActivity.this,WebviewActivity.class);
-                    intent.putExtra("url","http://convert2mp3.net/en/index.php?p=home");
+                    intent.putExtra("url","http://indekode.ml/CollegeBuddy/SyllabusLinks/TEMech.html");
                     startActivity(intent);
                 }
 
                 // For Parent 3
                 if(i == 3 && i1 == 0) {
                     Intent intent = new Intent(SyllabusActivity.this,WebviewActivity.class);
-                    intent.putExtra("url","https://likewap.top/catlist/47704/320-kbps.html");
+                    intent.putExtra("url","http://indekode.ml/CollegeBuddy/SyllabusLinks/TECivil.html");
                     startActivity(intent);
                 }
                 else if(i == 3 && i1 == 1) {
                     Intent intent = new Intent(SyllabusActivity.this,WebviewActivity.class);
-                    intent.putExtra("url","https://yts.am");
+                    intent.putExtra("url","http://indekode.ml/CollegeBuddy/SyllabusLinks/TECivil.html");
                     startActivity(intent);
                 }
                 else if(i == 3 && i1 == 2) {
                     Intent intent = new Intent(SyllabusActivity.this,WebviewActivity.class);
-                    intent.putExtra("url","https://www8.fmovies.se");
+                    intent.putExtra("url","http://indekode.ml/CollegeBuddy/SyllabusLinks/TECivil.html");
                     startActivity(intent);
                 }
 
                 // For Parent 4
                 if(i == 4 && i1 == 0) {
                     Intent intent = new Intent(SyllabusActivity.this,WebviewActivity.class);
-                    intent.putExtra("url","https://www.027ppt.com");
+                    intent.putExtra("url","http://indekode.ml/CollegeBuddy/SyllabusLinks/TEEntc.html");
                     startActivity(intent);
                 }
                 else if(i == 4 && i1 == 1) {
                     Intent intent = new Intent(SyllabusActivity.this,WebviewActivity.class);
-                    intent.putExtra("url","https://clashofclans.com/blog");
+                    intent.putExtra("url","http://indekode.ml/CollegeBuddy/SyllabusLinks/TEEntc.html");
                     startActivity(intent);
                 }
                 else if(i == 4 && i1 == 2) {
                     Intent intent = new Intent(SyllabusActivity.this,WebviewActivity.class);
-                    intent.putExtra("url","http://sofdl.com");
+                    intent.putExtra("url","http://indekode.ml/CollegeBuddy/SyllabusLinks/TEEntc.html");
+                    startActivity(intent);
+                }
+                // For Parent 5
+                if(i == 5 && i1 == 0) {
+                    Intent intent = new Intent(SyllabusActivity.this,WebviewActivity.class);
+                    intent.putExtra("url","http://indekode.ml/CollegeBuddy/SyllabusLinks/TEChem.html");
+                    startActivity(intent);
+                }
+                else if(i == 5 && i1 == 1) {
+                    Intent intent = new Intent(SyllabusActivity.this,WebviewActivity.class);
+                    intent.putExtra("url","http://indekode.ml/CollegeBuddy/SyllabusLinks/TEChem.html");
+                    startActivity(intent);
+                }
+                else if(i == 5 && i1 == 2) {
+                    Intent intent = new Intent(SyllabusActivity.this,WebviewActivity.class);
+                    intent.putExtra("url","http://indekode.ml/CollegeBuddy/SyllabusLinks/TEChem.html");
                     startActivity(intent);
                 }
                 return false;
