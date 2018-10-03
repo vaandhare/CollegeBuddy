@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/b_g">
+
+    <EditText
+        android:id="@+id/update_name"
+        android:layout_width="325dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="85dp"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded_btns"
+        android:paddingStart="20dp"
+        android:textColor="@color/White"
+        android:gravity="center_vertical" />
+
+    <EditText
+        android:id="@+id/update_username"
+        android:layout_width="325dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/update_name"
+        android:textSize="20dp"
+        android:background="@drawable/rounded_btns"
+        android:layout_centerHorizontal="true"
+        android:paddingStart="20dp"
+        android:textColor="@color/White"
+        android:gravity="center_vertical" />
+
+    <EditText
+        android:id="@+id/update_year"
+        android:layout_width="325dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/update_username"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:background="@drawable/rounded_btns"
+        android:paddingStart="20dp"
+        android:textColor="@color/White"
+        android:gravity="center_vertical" />
+
+    <EditText
+        android:id="@+id/update_branch"
+        android:layout_width="325dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/update_year"
+        android:textSize="20dp"
+        android:background="@drawable/rounded_btns"
+        android:textColor="@color/White"
+        android:paddingStart="20dp"
+        android:gravity="center_vertical" />
+
+    <EditText
+        android:id="@+id/update_div"
+        android:layout_width="325dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/update_branch"
+        android:textSize="20dp"
+        android:background="@drawable/rounded_btns"
+        android:textColor="@color/White"
+        android:paddingStart="20dp"
+        android:gravity="center_vertical" />
+
+    <EditText
+        android:id="@+id/update_rollno"
+        android:layout_width="325dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/update_div"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded_btns"
+        android:textColor="@color/White"
+        android:paddingStart="20dp"
+        android:gravity="center_vertical" />
+
+    <EditText
+        android:id="@+id/update_email"
+        android:layout_width="325dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/update_rollno"
+        android:textSize="20dp"
+        android:textColor="@color/White"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded_btns"
+        android:paddingStart="20dp"
+        android:gravity="center_vertical" />
+
+    <Button
+        android:id="@+id/bt_save_update"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded_btns"
+        android:layout_below="@id/update_email"
+        android:layout_marginTop="30dp"
+        android:text="Save"
+        android:textColor="@color/White"
+        android:textSize="25dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

@@ -48,6 +48,7 @@
         <NumberPicker
             android:id="@+id/std_year"
             android:layout_width="70dp"
+            android:solidColor="@color/White"
             android:layout_height="120dp"
             android:layout_marginStart="20dp">
 
@@ -55,6 +56,7 @@
         <NumberPicker
             android:id="@+id/std_branch"
             android:layout_width="90dp"
+            android:solidColor="@color/White"
             android:layout_height="120dp"
             android:layout_marginStart="20dp">
 
@@ -62,6 +64,7 @@
 
         <NumberPicker
             android:id="@+id/std_div"
+            android:solidColor="@color/White"
             android:layout_width="50dp"
             android:layout_height="120dp"
             android:layout_marginStart="20dp">
@@ -74,6 +77,7 @@
             android:layout_height="79dp"
             android:layout_marginStart="18dp"
             android:lines="1"
+            android:textColor="@color/White"
             android:layout_gravity="center"
             android:hint="@string/roll_no"
             android:textSize="15sp"
@@ -114,6 +118,7 @@
         android:layout_marginStart="15dp"
         android:layout_height="40dp"
         android:lines="1"
+        android:textColor="@color/White"
         android:inputType="textEmailAddress"
         android:layout_below="@id/txt_username"
         android:hint="@string/enter_email"
@@ -132,6 +137,7 @@
         android:lines="1"
         android:inputType="textPassword"
         android:layout_marginTop="15dp"
+        android:textColor="@color/White"
         android:hint="@string/enter_password"
         android:paddingStart="@dimen/tendp"
         android:paddingEnd="10dp"

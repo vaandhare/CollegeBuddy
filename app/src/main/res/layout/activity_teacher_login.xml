@@ -56,7 +56,7 @@
         android:inputType="textPassword"
         tools:ignore="Autofill"
         android:textColorHint="@color/colorAccent"
-        android:textColor="@color/colorAccent"/>
+        android:textColor="@color/White"/>
 
     <Button
         android:id="@+id/t_login"

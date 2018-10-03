@@ -79,7 +79,7 @@
         android:format12Hour="hh:mm:ss a"
         android:layout_marginTop="50dp"
         android:gravity="center"
-        android:textColor="#000"
+        android:textColor="@color/White"
         android:textSize="45sp"
         android:textStyle="bold" />
 
