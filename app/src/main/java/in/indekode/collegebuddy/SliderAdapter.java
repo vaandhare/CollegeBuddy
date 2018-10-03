@@ -21,19 +21,19 @@ public class SliderAdapter extends PagerAdapter {
     LayoutInflater layoutInflater;
 
     public int[] events_img = {
-            R.drawable.delhievnt,
-            R.drawable.img2,
-            R.drawable.img1
+            R.drawable.event1,
+            R.drawable.event2,
+            R.drawable.event3
     };
 
     public String[] event_titles = {
-            "Event 1", "Event 2", "Event 3"
+            "Technostav", "Anantya", "Dance Workshop"
     };
 
     public  String[] event_details = {
-            "This is event 1 description",
-            "This is event 2 description",
-            "This is event 3 description"
+            "Conducted by I2IT College",
+            "Conducted by PCCOE College",
+            "Conducted by COEP"
     };
 
     public int[] events_bgcolor = {

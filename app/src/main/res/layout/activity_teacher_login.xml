@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginTeacherActivity">
+    tools:context=".LoginTeacherActivity"
+    android:background="@drawable/b_g">
 
     <TextView
         android:id="@+id/t_dep_sel"
@@ -67,7 +68,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/rounded_btns"
         android:textColor="#fff"
         android:textSize="30dp"
         android:fontFamily="@font/faitorough"/>
