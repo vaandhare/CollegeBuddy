@@ -31,7 +31,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
     FirebaseAuth firebaseAuth;
     TextView pn,pun,py,pb,pd,prn,pemail;
     FirebaseDatabase firebaseDatabase;
-
+    static String roll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +64,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
                 py.setText("Year: " + userProfile.getYear());
                 pb.setText("Branch: " + userProfile.getBranch());
                 pd.setText("Division: " + userProfile.getDivision());
+                roll = userProfile.getRno().toString();
                 prn.setText("RollNo: " + userProfile.getRno());
                 pemail.setText("Email: " + userProfile.getEmail1());
             }
@@ -118,7 +119,9 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
+        if ( id == R.id.update_pro){
+            startActivity(new Intent(this, UpdateProfileActivity.class));
+        }else if (id == R.id.update_pw) {
             Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
         }
         else if (id == R.id.nav_logout) {
@@ -150,7 +153,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
                 Toast.makeText(activity, "Timetable", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_attendance:
-                activity.startActivity(new Intent(activity, AttendanceActivity.class));
+                activity.startActivity(new Intent(activity, AttendanceActivity.class).putExtra("rollno",roll));
                 Toast.makeText(activity, "Attendance", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_syllabus:

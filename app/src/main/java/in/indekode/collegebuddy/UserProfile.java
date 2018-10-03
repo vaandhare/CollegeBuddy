@@ -9,7 +9,6 @@ public class UserProfile {
     public String branch;
     public String division;
     public String name1;
-
     public UserProfile() {
 
     }
@@ -90,4 +89,6 @@ public class UserProfile {
     public void setName1(String name1) {
         this.name1 = name1;
     }
+
+
 }

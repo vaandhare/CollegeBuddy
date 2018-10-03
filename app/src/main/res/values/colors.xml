@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#0077c2</color>
-    <color name="colorPrimaryDark">#80d6ff</color>
+    <color name="colorPrimaryDark">#445555</color>
     <color name="colorAccent">#42a5f5</color>
-    <color name="Black">#1b3039</color>
+    <color name="Black">#000000</color>
     <color name="deeppurple">#7200ca</color>
     <color name="yello">#ffea00</color>
-    <color name="green">#04d670</color>
+    <color name="green">#ff6659</color>
     <color name="ChildColor">#005bb2</color>
+    <color name="White">#fff</color>
 
 </resources>

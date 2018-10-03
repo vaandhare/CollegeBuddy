@@ -26,7 +26,6 @@ public class RegistrationActivity extends AppCompatActivity {
     EditText reg_email, reg_password, reg_roll_no, reg_name;
     TextView  reg_username, reg_login;
     Button reg_validate, bt_register;
-
     FirebaseAuth firebaseAuth;
 
     final String Branch[] = {"Branch","Comp", "Civil", "Mech", "Chem", "EnTC"};
@@ -174,8 +173,9 @@ public class RegistrationActivity extends AppCompatActivity {
             result = true;
         }
         return result;
-
     }
+
+
 
     public void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();

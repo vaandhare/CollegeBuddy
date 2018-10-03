@@ -13,13 +13,24 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class AttendanceActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     FirebaseAuth firebaseAuth;
+    DatabaseReference databaseReference;
+    FirebaseDatabase firebaseDatabase;
+    String sub1, sub2, sub3, sub4, sub5;
+    TextView s1, s2, s3, s4, s5;
+    TextView st1,st2,st3,st4,st5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +40,12 @@ public class AttendanceActivity extends AppCompatActivity implements NavigationV
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Attendance");
 
+        st1 = (TextView)findViewById(R.id.tv_sub1);
+        st2 = (TextView)findViewById(R.id.tv_sub2);
+        st3 = (TextView)findViewById(R.id.tv_sub3);
+        st4 = (TextView)findViewById(R.id.tv_sub4);
+        st5 = (TextView)findViewById(R.id.tv_sub5);
+        databaseReference = FirebaseDatabase.getInstance().getReference();
         firebaseAuth = FirebaseAuth.getInstance();
 
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
@@ -39,6 +56,32 @@ public class AttendanceActivity extends AppCompatActivity implements NavigationV
 
         NavigationView navigationView =  findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Bundle b = this.getIntent().getExtras();
+        final String roll = b.getString("rollno");
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
+                    if(postSnapshot.child("rno").getValue().toString().equals(roll)){
+                        st1.setText(postSnapshot.child("sub1").getValue().toString());
+                        st2.setText(postSnapshot.child("sub2").getValue().toString());
+                        st3.setText(postSnapshot.child("sub3").getValue().toString());
+                        st4.setText(postSnapshot.child("sub4").getValue().toString());
+                        st5.setText(postSnapshot.child("sub5").getValue().toString());
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
 
     }
 
@@ -58,7 +101,9 @@ public class AttendanceActivity extends AppCompatActivity implements NavigationV
 
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
+        if ( id == R.id.update_pro){
+            startActivity(new Intent(this, UpdateProfileActivity.class));
+        }else if (id == R.id.update_pw) {
             Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
         }
         else if (id == R.id.nav_logout) {

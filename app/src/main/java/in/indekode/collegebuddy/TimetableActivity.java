@@ -171,7 +171,9 @@ public class TimetableActivity extends AppCompatActivity implements NavigationVi
 
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
+        if ( id == R.id.update_pro){
+            startActivity(new Intent(this, UpdateProfileActivity.class));
+        }else if (id == R.id.update_pw) {
             Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
         }
         else if (id == R.id.nav_logout) {

@@ -18,6 +18,13 @@ public class TeacherActivity extends AppCompatActivity {
         bt_notice = findViewById(R.id.send_notice);
         bt_attendance = findViewById(R.id.update_attendance);
 
+        bt_attendance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(TeacherActivity.this, TeacherAttendance.class));
+            }
+        });
+
         bt_notice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

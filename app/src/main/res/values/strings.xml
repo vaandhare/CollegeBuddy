@@ -54,4 +54,6 @@
     <string name="department">Department</string>
     <string name="enter_password">Enter Password</string>
     <string name="title_activity_teacher_notice">TeacherNoticeActivity</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="update_password">Change Password</string>
 </resources>
