@@ -52,29 +52,21 @@ public class NotificationUtils {
 
 
         // notification icon
-        final int icon = R.mipmap.round_logo;
+        final int icon = R.mipmap.logo;
 
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         final PendingIntent resultPendingIntent =
-                PendingIntent.getActivity(
-                        mContext,
-                        0,
-                        intent,
-                        PendingIntent.FLAG_CANCEL_CURRENT
-                );
+                PendingIntent.getActivity(mContext, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
 
-        final NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(
-                mContext);
+        final NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(mContext);
 
-        final Uri alarmSound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE
-                + "://" + mContext.getPackageName() + "/raw/notification.mp3");
+        final Uri alarmSound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + mContext.getPackageName() + "/raw/notification.mp3");
 
         if (!TextUtils.isEmpty(imageUrl)) {
 
             if (imageUrl != null && imageUrl.length() > 4 && Patterns.WEB_URL.matcher(imageUrl).matches()) {
 
                 Bitmap bitmap = getBitmapFromURL(imageUrl);
-
                 if (bitmap != null) {
                     showBigNotification(bitmap, mBuilder, icon, title, message, timeStamp, resultPendingIntent, alarmSound);
                 } else {
@@ -102,7 +94,7 @@ public class NotificationUtils {
                 .setSound(alarmSound)
                 .setStyle(inboxStyle)
                 .setWhen(getTimeMilliSec(timeStamp))
-                .setSmallIcon(R.mipmap.round_logo)
+                .setSmallIcon(R.mipmap.logo)
                 .setLargeIcon(BitmapFactory.decodeResource(mContext.getResources(), icon))
                 .setContentText(message)
                 .build();
@@ -124,7 +116,7 @@ public class NotificationUtils {
                 .setSound(alarmSound)
                 .setStyle(bigPictureStyle)
                 .setWhen(getTimeMilliSec(timeStamp))
-                .setSmallIcon(R.mipmap.round_logo)
+                .setSmallIcon(R.mipmap.logo)
                 .setLargeIcon(BitmapFactory.decodeResource(mContext.getResources(), icon))
                 .setContentText(message)
                 .build();
@@ -155,8 +147,7 @@ public class NotificationUtils {
     // Playing notification sound
     public void playNotificationSound() {
         try {
-            Uri alarmSound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE
-                    + "://" + mContext.getPackageName() + "/raw/notification");
+            Uri alarmSound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + mContext.getPackageName() + "/raw/notification");
             Ringtone r = RingtoneManager.getRingtone(mContext, alarmSound);
             r.play();
         } catch (Exception e) {

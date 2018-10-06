@@ -4,12 +4,15 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <meta-data
+        android:name="com.google.android.gms.ads.APPLICATION_ID"
+        android:value="ca-app-pub-3523952097375361~9089632866"/>
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/round_logo"
+        android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
