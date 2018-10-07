@@ -4,9 +4,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <meta-data
         android:name="com.google.android.gms.ads.APPLICATION_ID"
-        android:value="ca-app-pub-3523952097375361~9089632866"/>
+        android:value="ca-app-pub-3523952097375361~9089632866" />
 
     <application
         android:allowBackup="true"
@@ -58,7 +59,8 @@
 
         <activity android:name=".WebviewActivity" />
         <activity android:name=".UpdateProfileActivity" />
-        <activity android:name=".TeacherAttendance"></activity>
+        <activity android:name=".TeacherAttendance" />
+        <activity android:name=".UpdatePassword"></activity>
     </application>
 
 </manifest>

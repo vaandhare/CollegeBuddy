@@ -264,7 +264,7 @@ public class SyllabusActivity extends AppCompatActivity implements OnNavigationI
         if ( id == R.id.update_pro){
             startActivity(new Intent(this, UpdateProfileActivity.class));
         }else if (id == R.id.update_pw) {
-            Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, UpdatePassword.class));
         }
         else if (id == R.id.nav_logout) {
             firebaseAuth.signOut();
