@@ -51,8 +51,8 @@ public class UpdateProfileActivity extends AppCompatActivity {
                 uusrname.setText(userProfile.getUsername1());
                 uyr.setText( userProfile.getYear());
                 ubr.setText(userProfile.getBranch());
-                urno.setText( userProfile.getDivision());
-                udiv.setText(userProfile.getRno());
+                udiv.setText( userProfile.getDivision());
+                urno.setText(userProfile.getRno());
                 uemail.setText(userProfile.getEmail1());
             }
 

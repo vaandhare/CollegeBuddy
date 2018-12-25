@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -88,6 +89,7 @@ public class TeacherAttendance extends AppCompatActivity {
                                 postSnapshot.child("sub5").getRef().setValue(s5);
                             }
                         }
+                        Toast.makeText(TeacherAttendance.this, "Attendance updated successfully!", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override

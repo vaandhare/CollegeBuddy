@@ -41,13 +41,13 @@ public class NavigationDrawerActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setTitle("Profile");
-        pn = (TextView)findViewById(R.id.usr_name);
+        pn = findViewById(R.id.usr_name);
         pun = findViewById(R.id.usr_usrname);
-        py = (TextView)findViewById(R.id.usr_year);
-        pb = (TextView)findViewById(R.id.usr_branch);
-        pd = (TextView)findViewById(R.id.usr_div);
-        prn = (TextView)findViewById(R.id.usr_rn);
-        pemail = (TextView)findViewById(R.id.usr_email);
+        py = findViewById(R.id.usr_year);
+        pb = findViewById(R.id.usr_branch);
+        pd = findViewById(R.id.usr_div);
+        prn = findViewById(R.id.usr_rn);
+        pemail = findViewById(R.id.usr_email);
 
 
         firebaseAuth = FirebaseAuth.getInstance();

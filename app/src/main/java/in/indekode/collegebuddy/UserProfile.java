@@ -49,7 +49,6 @@ public class UserProfile {
         this.rno = rno;
     }
 
-
     public String getPassword1() {
         return password1;
     }

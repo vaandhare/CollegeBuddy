@@ -3,13 +3,14 @@ package in.indekode.collegebuddy;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
 public class STLogin extends AppCompatActivity {
 
-    Button bt_std, bt_tchr;
+    CardView bt_std, bt_tchr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

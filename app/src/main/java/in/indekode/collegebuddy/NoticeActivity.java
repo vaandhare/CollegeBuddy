@@ -29,7 +29,6 @@ import in.indekode.collegebuddy.util.NotificationUtils;
 
 public class NoticeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener
 {
-
     FirebaseAuth firebaseAuth;
     private static final String TAG = MainActivity.class.getSimpleName();
     private BroadcastReceiver mRegistrationBroadcastReceiver;
@@ -162,5 +161,4 @@ public class NoticeActivity extends AppCompatActivity  implements NavigationView
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
 }
