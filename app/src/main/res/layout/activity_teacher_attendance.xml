@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TeacherAttendance"
-    android:background="@drawable/b_g">
+    tools:context=".TeacherAttendance">
     <TextView
         android:id="@+id/ts_dep_sel"
         android:layout_width="match_parent"

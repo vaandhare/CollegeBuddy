@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginTeacherActivity"
-    android:background="@drawable/b_g">
+    tools:context=".LoginTeacherActivity">
 
     <TextView
         android:id="@+id/t_dep_sel"
