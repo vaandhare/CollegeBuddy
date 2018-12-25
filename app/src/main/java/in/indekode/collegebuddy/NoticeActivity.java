@@ -32,7 +32,7 @@ public class NoticeActivity extends AppCompatActivity  implements NavigationView
     FirebaseAuth firebaseAuth;
     private static final String TAG = MainActivity.class.getSimpleName();
     private BroadcastReceiver mRegistrationBroadcastReceiver;
-    private TextView txtRegId, txtMessage;
+    private TextView txtMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +43,7 @@ public class NoticeActivity extends AppCompatActivity  implements NavigationView
         getSupportActionBar().setTitle("Notice");
 
         firebaseAuth = FirebaseAuth.getInstance();
-        txtRegId = (TextView) findViewById(R.id.txt_reg_id);
-        txtMessage = (TextView) findViewById(R.id.txt_push_message);
+        txtMessage = findViewById(R.id.txt_push_message);
 
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -65,11 +64,8 @@ public class NoticeActivity extends AppCompatActivity  implements NavigationView
                     // now subscribe to `global` topic to receive app wide notifications
                     FirebaseMessaging.getInstance().subscribeToTopic(Config.TOPIC_GLOBAL);
 
-                    displayFirebaseRegId();
-
                 } else if (intent.getAction().equals(Config.PUSH_NOTIFICATION)) {
                     // new push notification is received
-
                     String message = intent.getStringExtra("message");
 
                     Toast.makeText(getApplicationContext(), "Push notification: " + message, Toast.LENGTH_LONG).show();
@@ -78,22 +74,8 @@ public class NoticeActivity extends AppCompatActivity  implements NavigationView
                 }
             }
         };
-
-        displayFirebaseRegId();
-
     }
 
-    private void displayFirebaseRegId() {
-        SharedPreferences pref = getApplicationContext().getSharedPreferences(Config.SHARED_PREF, 0);
-        String regId = pref.getString("regId", null);
-
-        Log.e(TAG, "Firebase reg id: " + regId);
-
-        if (!TextUtils.isEmpty(regId))
-            txtRegId.setText("Firebase Reg Id: " + regId);
-        else
-            txtRegId.setText("Firebase Reg Id is not received yet!");
-    }
 
     @Override
     protected void onResume() {

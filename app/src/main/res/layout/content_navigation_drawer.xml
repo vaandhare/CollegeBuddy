@@ -1,120 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/txt_profile"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:text="@string/Profile"
-        android:gravity="center"
+
+    <android.support.v7.widget.CardView
+        android:layout_width="330dp"
+        android:layout_height="450dp"
+        android:elevation="8dp"
         android:layout_marginTop="95dp"
-        android:textSize="40dp"
-        android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:background="@drawable/rounded_btns"
-        android:fontFamily="@font/faitorough"
-        android:textColor="@color/White"/>
+        android:layout_marginStart="15dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0.0px"
+        card_view:cardElevation="10dp"
+        card_view:cardCornerRadius="10dp"
+        card_view:cardBackgroundColor="#39796b"
+        card_view:cardPreventCornerOverlap="false">
 
-    <TextView
-        android:id="@+id/usr_name"
-        android:layout_width="325dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="25dp"
-        android:layout_below="@id/txt_profile"
-        android:textSize="20dp"
-        android:text="Name"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/rounded_btns"
-        android:paddingStart="20dp"
-        android:textColor="@color/White"
-        android:gravity="center_vertical" />
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/usr_usrname"
-        android:layout_width="325dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="15dp"
-        android:layout_below="@id/usr_name"
-        android:textSize="20dp"
-        android:text="Username "
-        android:background="@drawable/rounded_btns"
-        android:layout_centerHorizontal="true"
-        android:paddingStart="20dp"
-        android:textColor="@color/White"
-        android:gravity="center_vertical" />
+            <TextView
+                android:id="@+id/usr_name"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="20dp"
+                android:text="Name"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="20dp"
+                android:layout_marginTop="45dp"
 
-    <TextView
-        android:id="@+id/usr_year"
-        android:layout_width="325dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/usr_usrname"
-        android:layout_centerHorizontal="true"
-        android:textSize="20dp"
-        android:background="@drawable/rounded_btns"
-        android:text="Year"
-        android:paddingStart="20dp"
-        android:textColor="@color/White"
-        android:gravity="center_vertical" />
+                android:textColor="@color/White"
+                android:gravity="center_vertical" />
 
-    <TextView
-        android:id="@+id/usr_branch"
-        android:layout_width="325dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="15dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/usr_year"
-        android:textSize="20dp"
-        android:background="@drawable/rounded_btns"
-        android:text="Branch"
-        android:textColor="@color/White"
-        android:paddingStart="20dp"
-        android:gravity="center_vertical" />
+            <TextView
+                android:id="@+id/usr_usrname"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/usr_name"
+                android:textSize="20dp"
+                android:text="Username "
+                android:layout_centerHorizontal="true"
+                android:paddingStart="20dp"
 
-    <TextView
-        android:id="@+id/usr_div"
-        android:layout_width="325dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="15dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/usr_branch"
-        android:textSize="20dp"
-        android:background="@drawable/rounded_btns"
-        android:text="Division"
-        android:textColor="@color/White"
-        android:paddingStart="20dp"
-        android:gravity="center_vertical" />
+                android:textColor="@color/White"
+                android:gravity="center_vertical" />
 
-    <TextView
-        android:id="@+id/usr_rn"
-        android:layout_width="325dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/usr_div"
-        android:textSize="20dp"
-        android:layout_centerHorizontal="true"
-        android:text="RollNo"
-        android:background="@drawable/rounded_btns"
-        android:textColor="@color/White"
-        android:paddingStart="20dp"
-        android:gravity="center_vertical" />
+            <TextView
+                android:id="@+id/usr_year"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/usr_usrname"
+                android:layout_centerHorizontal="true"
+                android:textSize="20dp"
+                android:text="Year"
+                android:paddingStart="20dp"
+                android:textColor="@color/White"
 
-    <TextView
-        android:id="@+id/usr_email"
-        android:layout_width="325dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/usr_rn"
-        android:textSize="17dp"
-        android:textColor="@color/White"
-        android:layout_centerHorizontal="true"
-        android:text="Email"
-        android:background="@drawable/rounded_btns"
-        android:paddingStart="20dp"
-        android:gravity="center_vertical" />
+                android:gravity="center_vertical" />
 
+            <TextView
+                android:id="@+id/usr_branch"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/usr_year"
+                android:textSize="20dp"
+                android:text="Branch"
+                android:textColor="@color/White"
+                android:paddingStart="20dp"
+
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/usr_div"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/usr_branch"
+                android:textSize="20dp"
+                android:text="Division"
+                android:textColor="@color/White"
+                android:paddingStart="20dp"
+
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/usr_rn"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/usr_div"
+                android:textSize="20dp"
+                android:layout_centerHorizontal="true"
+                android:text="RollNo"
+                android:textColor="@color/White"
+                android:paddingStart="20dp"
+
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/usr_email"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/usr_rn"
+                android:textSize="18dp"
+                android:textColor="@color/White"
+
+                android:layout_centerHorizontal="true"
+                android:text="Email"
+                android:paddingStart="20dp"
+                android:gravity="center_vertical" />
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
 
 </RelativeLayout>

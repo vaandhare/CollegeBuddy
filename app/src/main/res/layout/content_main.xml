@@ -115,14 +115,13 @@
         android:layout_marginStart="15dp"
         android:layout_height="40dp"
         android:lines="1"
-        android:textColor="@color/White"
+        android:textColor="@color/colorPrimaryDark"
         android:inputType="textEmailAddress"
         android:layout_below="@id/txt_username"
         android:hint="@string/enter_email"
         android:layout_marginTop="15dp"
         android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        tools:ignore="Autofill" />
+        android:paddingEnd="10dp" />
 
 
     <EditText
@@ -134,7 +133,7 @@
         android:lines="1"
         android:inputType="textPassword"
         android:layout_marginTop="15dp"
-        android:textColor="@color/White"
+        android:textColor="@color/colorPrimaryDark"
         android:hint="@string/enter_password"
         android:paddingStart="@dimen/tendp"
         android:paddingEnd="10dp"
