@@ -59,14 +59,14 @@ public class NavigationDrawerActivity extends AppCompatActivity
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
-                pn.setText("Name: " + userProfile.getName1());
-                pun.setText("Username: "+userProfile.getUsername1());
-                py.setText("Year: " + userProfile.getYear());
-                pb.setText("Branch: " + userProfile.getBranch());
-                pd.setText("Division: " + userProfile.getDivision());
+                pn.setText(userProfile.getName1());
+                pun.setText(userProfile.getUsername1());
+                py.setText(userProfile.getYear());
+                pb.setText(userProfile.getBranch());
+                pd.setText( userProfile.getDivision());
                 roll = userProfile.getRno().toString();
-                prn.setText("RollNo: " + userProfile.getRno());
-                pemail.setText("Email: " + userProfile.getEmail1());
+                prn.setText(userProfile.getRno());
+                pemail.setText(userProfile.getEmail1());
             }
 
             @Override
