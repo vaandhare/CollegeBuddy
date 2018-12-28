@@ -3,17 +3,22 @@ package in.indekode.collegebuddy;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
 public class TeacherActivity extends AppCompatActivity {
 
-    Button bt_notice, bt_attendance;
+    CardView bt_notice, bt_attendance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher);
+        Toolbar toolbar =  findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Teacher");
 
         bt_notice = findViewById(R.id.send_notice);
         bt_attendance = findViewById(R.id.update_attendance);

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SyllabusActivity">
+    tools:context=".SyllabusActivity"
+    android:background="@color/White">
 
     <TextView
         android:id="@+id/tv_semester1"
@@ -14,18 +15,21 @@
         android:fontFamily="@font/faitorough"
         android:gravity="center"
         android:textSize="30dp"
+        android:textColor="@color/Black"
         android:textStyle="bold"
-        android:textColor="@color/White"
         android:layout_marginTop="20dp"/>
 
     <ExpandableListView
         android:id="@+id/elv"
         android:layout_below="@id/tv_semester1"
         android:layout_marginTop="10dp"
-        android:paddingStart="@dimen/tendp"
-        android:paddingEnd="@dimen/tendp"
+        android:padding="@dimen/tendp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:dividerHeight="8dp"
         android:layout_width="match_parent"
         android:layout_height="550dp">
+
     </ExpandableListView>
 
 </RelativeLayout>

@@ -14,7 +14,7 @@
         android:layout_height="80dp"
         android:layout_marginStart="35sp"
         android:layout_marginTop="160dp"
-        app:cardBackgroundColor="#90caf9">
+        app:cardBackgroundColor="#00bcd4">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,6 +34,7 @@
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
                 android:text="Student"
+                android:textColor="@color/White"
                 android:textSize="30sp"/>
         </LinearLayout>
 
@@ -46,7 +47,7 @@
         android:layout_height="80dp"
         android:layout_marginStart="35sp"
         android:layout_marginTop="20dp"
-        app:cardBackgroundColor="#90caf9"
+        app:cardBackgroundColor="#00bcd4"
         android:layout_below="@id/Login_to_std">
 
         <LinearLayout
@@ -66,6 +67,7 @@
                 android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
+                android:textColor="@color/White"
                 android:text="Teacher"
                 android:textSize="30sp"/>
         </LinearLayout>

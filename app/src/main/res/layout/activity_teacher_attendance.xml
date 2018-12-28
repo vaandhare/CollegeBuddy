@@ -6,13 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TeacherAttendance">
+
+
     <TextView
         android:id="@+id/ts_dep_sel"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:text="Year/Branch"
-        android:textSize="25dp"
+        android:textSize="15dp"
+        android:gravity="center_vertical"
         android:paddingStart="15dp"
         android:layout_alignParentStart="true"
         android:textColor="@color/colorAccent" />
@@ -20,42 +23,47 @@
         android:id="@+id/ts_dept"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@+id/ts_dep_sel"
+        android:layout_toRightOf="@+id/ts_dep_sel"
         android:paddingStart="10dp"
         android:layout_marginTop="@dimen/tendp"/>
+
     <TextView
         android:id="@+id/r_n"
-        android:layout_width="180dp"
+        android:layout_width="150dp"
         android:layout_height="40dp"
         android:text="Student Name"
-        android:textSize="25dp"
+        android:textSize="15dp"
         android:paddingStart="10dp"
         android:layout_below="@+id/ts_dept"
         android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
         android:textColor="@color/colorAccent" />
+
+
     <EditText
         android:id="@+id/s_r_n"
-        android:layout_width="100dp"
+        android:layout_width="60dp"
         android:layout_height="40dp"
         android:layout_below="@+id/ts_dept"
         android:layout_marginLeft="180dp"
         android:textSize="15dp"
-        android:lines="1"
-        android:textColor="@color/White"
+        android:maxLines="1"
+        android:inputType="numberDecimal"
+        android:textColor="#ff23729a"
         android:layout_marginTop="10dp"
-        android:hint="RollNo"
-        />
+        android:hint="RollNo" />
 
     <EditText
         android:id="@+id/s_div"
-        android:layout_width="100dp"
+        android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_below="@+id/ts_dept"
         android:layout_marginLeft="280dp"
         android:layout_marginTop="10dp"
         android:hint="Div"
-        android:lines="1"
-        android:textColor="@color/White"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="#ff23729a"
         android:textSize="15dp" />
     <Button
         android:id="@+id/get_t"
@@ -75,33 +83,33 @@
         android:hint="student data"
         android:layout_below="@+id/r_n"
         android:layout_marginTop="10dp"
-        android:textColor="@color/White"
+        android:textColor="#ff23729a"
         android:layout_marginStart="200dp"
-        android:textSize="20dp"
-        />
+        android:textSize="20dp" />
+
+
     <TextView
         android:id="@+id/s1"
         android:layout_width="90dp"
         android:layout_height="40dp"
         android:layout_below="@+id/get_t"
-        android:text="Sub1"
-        android:background="@drawable/rounded_btns"
+        android:text="Sub1 :"
         android:gravity="center"
-        android:textColor="@color/White"
-        android:textSize="20dp"
+        android:textColor="#ff23729a"
+        android:textSize="15dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        />
+        android:layout_marginTop="20dp" />
+
+
     <TextView
         android:id="@+id/s2"
         android:layout_width="90dp"
         android:layout_height="40dp"
         android:layout_below="@+id/s1"
-        android:text="Sub2"
-        android:background="@drawable/rounded_btns"
+        android:text="Sub2 :"
         android:gravity="center"
-        android:textColor="@color/White"
-        android:textSize="20dp"
+        android:textColor="#ff23729a"
+        android:textSize="15dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         />
@@ -109,102 +117,113 @@
         android:id="@+id/s3"
         android:layout_width="90dp"
         android:layout_height="40dp"
-        android:background="@drawable/rounded_btns"
         android:gravity="center"
-        android:textColor="@color/White"
+        android:textColor="#ff23729a"
         android:layout_below="@+id/s2"
-        android:text="Sub3"
-        android:textSize="20dp"
+        android:text="Sub3 :"
+        android:textSize="15dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        />
+        android:layout_marginTop="20dp" />
+
+
     <TextView
         android:id="@+id/s4"
         android:layout_width="90dp"
         android:layout_height="40dp"
         android:layout_below="@+id/s3"
-        android:text="Sub4"
-        android:background="@drawable/rounded_btns"
+        android:text="Sub4 :"
         android:gravity="center"
-        android:textColor="@color/White"
-        android:textSize="20dp"
+        android:textColor="#ff23729a"
+        android:textSize="15dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        />
+        android:layout_marginTop="20dp" />
+
+
     <TextView
         android:id="@+id/s5"
         android:layout_width="90dp"
         android:layout_height="40dp"
         android:layout_below="@+id/s4"
-        android:text="Sub5"
-        android:textSize="20dp"
-        android:background="@drawable/rounded_btns"
+        android:text="Sub5 :"
+        android:textSize="15dp"
         android:gravity="center"
-        android:textColor="@color/White"
+        android:textColor="#ff23729a"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        />
+        android:layout_marginTop="20dp" />
+
+
     <EditText
         android:id="@+id/s1m"
-        android:layout_width="100dp"
+        android:layout_width="60dp"
         android:layout_height="40dp"
-        android:lines="1"
+        android:maxLines="1"
+        android:inputType="numberDecimal"
         android:layout_below="@+id/get_t"
         android:layout_marginLeft="200dp"
-        android:textColor="@color/White"
+        android:textColor="#ff23729a"
         android:textSize="18dp"
-        android:layout_marginTop="20dp"
-        />
+        android:layout_marginTop="20dp" />
+
+
     <EditText
         android:id="@+id/s2m"
-        android:layout_width="100dp"
+        android:layout_width="60dp"
         android:layout_height="40dp"
-        android:textColor="@color/White"
+        android:textColor="#ff23729a"
         android:layout_below="@+id/s1m"
-        android:lines="1"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
         android:layout_marginLeft="200dp"
         android:textSize="18dp"
-        android:layout_marginTop="20dp"
-        />
+        android:layout_marginTop="20dp" />
+
+
     <EditText
         android:id="@+id/s3m"
-        android:layout_width="100dp"
+        android:layout_width="60dp"
         android:layout_height="40dp"
-        android:textColor="@color/White"
-        android:lines="1"
+        android:textColor="#ff23729a"
+        android:maxLines="1"
+        android:inputType="numberDecimal"
         android:layout_below="@+id/s2m"
         android:layout_marginLeft="200dp"
         android:textSize="18dp"
-        android:layout_marginTop="20dp"
-        />
+        android:layout_marginTop="20dp" />
+
+
     <EditText
         android:id="@+id/s4m"
-        android:layout_width="100dp"
+        android:layout_width="60dp"
         android:layout_height="40dp"
-        android:textColor="@color/White"
-        android:lines="1"
+        android:textColor="#ff23729a"
+        android:maxLines="1"
+        android:inputType="numberDecimal"
         android:layout_below="@+id/s3m"
         android:layout_marginLeft="200dp"
         android:textSize="18dp"
-        android:layout_marginTop="20dp"
-        />
+        android:layout_marginTop="20dp" />
+
+
     <EditText
         android:id="@+id/s5m"
-        android:layout_width="100dp"
+        android:layout_width="60dp"
         android:layout_height="40dp"
-        android:textColor="@color/White"
-        android:lines="1"
+        android:textColor="#ff23729a"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
         android:layout_below="@+id/s4m"
         android:layout_marginLeft="200dp"
         android:textSize="18dp"
-        android:layout_marginTop="20dp"
-        />
+        android:layout_marginTop="20dp" />
+
+
     <Button
         android:id="@+id/send_data"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:text="Upload"
         android:background="@drawable/rounded_btns"
+        android:inputType="numberDecimal"
         android:gravity="center"
         android:textColor="@color/White"
         android:layout_below="@+id/s5m"

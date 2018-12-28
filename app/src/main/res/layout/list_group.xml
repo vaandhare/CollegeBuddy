@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="5dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="50dp">
-
+    android:layout_marginTop="50dp"
+    android:background="#00bcd4">
 
     <TextView
         android:id="@+id/lblListHeader"
@@ -14,5 +14,6 @@
         android:textColor="@color/White"
         android:gravity="center_vertical"
         android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
-        android:textSize="16dp" />
+        android:textSize="16dp"/>
+
 </LinearLayout>
