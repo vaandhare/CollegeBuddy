@@ -34,8 +34,9 @@
         <activity
             android:name=".RegistrationActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".LoginTeacherActivity" />
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".LoginTeacherActivity"
+            android:parentActivityName=".STLogin"/>
         <activity
             android:name=".NoticeActivity"
             android:label="@string/title_activity_notice"

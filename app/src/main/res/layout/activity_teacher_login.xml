@@ -6,26 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".LoginTeacherActivity">
 
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@style/AppTheme.NoActionBar.AppBarOverlay"
+        android:background="@color/faint_green">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay" />
+
     <TextView
         android:id="@+id/t_dep_sel"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="130dp"
         android:text="@string/department"
         android:textStyle="bold"
+        android:layout_marginLeft="20dp"
         android:gravity="center_vertical"
         android:textSize="15dp"
         android:paddingStart="15dp"
         android:layout_alignParentStart="true"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/new_blue" />
 
     <Spinner
         android:id="@+id/s_dept"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="-40dp"
         android:layout_toRightOf="@+id/t_dep_sel"
+        android:background="@drawable/rounded_btns"
         android:paddingStart="10dp" />
 
     <TextView
@@ -35,20 +50,22 @@
         android:text="Teacher Name"
         android:textStyle="bold"
         android:gravity="center_vertical"
+        android:layout_marginLeft="20dp"
         android:textSize="15dp"
         android:paddingStart="10dp"
         android:layout_below="@+id/s_dept"
         android:layout_marginTop="10dp"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/new_blue" />
 
     <Spinner
         android:id="@+id/s_teacher"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="150dp"
         android:layout_toRightOf="@id/t_dep_sel"
-        android:layout_below="@+id/t_dep_sel"
-        android:layout_marginTop="10dp"
+        android:layout_below="@+id/s_dept"
+        android:background="@drawable/rounded_btns"
+        android:layout_marginTop="-40dp"
         android:paddingStart="10dp" />
 
     <EditText
@@ -58,11 +75,13 @@
         android:hint="@string/enter_password"
         android:layout_below="@+id/s_teacher"
         android:layout_marginTop="30dp"
+        android:textColor="@color/new_blue"
+        android:layout_gravity="center_horizontal"
         android:layout_centerInParent="true"
         android:inputType="textPassword"
         tools:ignore="Autofill"
         android:lines="1"
-        android:textColorHint="@color/colorAccent"/>
+        android:textColorHint="@color/new_blue"/>
 
     <Button
         android:id="@+id/t_login"
@@ -74,8 +93,12 @@
         android:layout_marginTop="50dp"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
+        android:layout_gravity="center_horizontal"
         android:background="@drawable/rounded_btns"
         android:textColor="#fff"
         android:textSize="22dp"
         android:fontFamily="@font/faitorough"/>
+
+    </android.support.design.widget.AppBarLayout>
+
 </RelativeLayout>

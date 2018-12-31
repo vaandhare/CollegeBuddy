@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SyllabusActivity"
-    android:background="@color/White">
+    android:background="@color/faint_green">
 
     <TextView
         android:id="@+id/tv_semester1"
@@ -15,7 +15,7 @@
         android:fontFamily="@font/faitorough"
         android:gravity="center"
         android:textSize="30dp"
-        android:textColor="@color/Black"
+        android:textColor="@color/new_blue"
         android:textStyle="bold"
         android:layout_marginTop="20dp"/>
 

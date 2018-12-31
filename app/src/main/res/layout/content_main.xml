@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_main"
+    android:background="@color/faint_green">
 
 
     <TextView
@@ -18,28 +19,27 @@
         android:fontFamily="@font/faitorough"
         android:gravity="center"
         android:text="@string/Login"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/new_blue"
         android:textSize="55sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_pickuser"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="21dp"
         android:layout_below="@id/LoginText"
-        android:layout_marginTop="35dp"
-        android:textColor="@color/colorAccent"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/new_blue"
         android:text="@string/Pick_Usernme"
         android:gravity="start"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:paddingStart="10dp"
-        android:paddingEnd="10dp"
         android:textStyle="bold"/>
 
 
     <LinearLayout
         android:id="@+id/picker"
-        android:background="@color/White"
+        android:background="@color/faint_green"
         android:theme="@style/AppTheme.NoActionBar"
         android:layout_below="@id/tv_pickuser"
         android:layout_width="match_parent"
@@ -100,14 +100,14 @@
     <TextView
         android:id="@+id/txt_username"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="25dp"
         android:text="@string/username"
         android:textStyle="bold"
-        android:textSize="20sp"
-        android:textColor="@color/colorAccent"
+        android:textSize="17sp"
+        android:textColor="@color/new_blue"
         android:layout_below="@id/validate_username"
         android:paddingStart="20dp"
-        android:paddingEnd="10dp"/>
+        android:paddingEnd="20dp"/>
 
     <EditText
         android:id="@+id/etv_email"
@@ -115,7 +115,7 @@
         android:layout_marginStart="15dp"
         android:layout_height="40dp"
         android:lines="1"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/new_blue"
         android:inputType="textEmailAddress"
         android:layout_below="@id/txt_username"
         android:hint="@string/enter_email"
@@ -133,7 +133,7 @@
         android:lines="1"
         android:inputType="textPassword"
         android:layout_marginTop="15dp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/new_blue"
         android:hint="@string/enter_password"
         android:paddingStart="@dimen/tendp"
         android:paddingEnd="10dp"
@@ -169,7 +169,7 @@
         android:gravity="center"
         android:paddingStart="10dp"
         android:text="@string/registration"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/new_blue"
         android:textSize="17sp" />
 
     <TextView
@@ -184,7 +184,7 @@
         android:paddingEnd="1dp"
         android:paddingStart="1dp"
         android:text="@string/forgot_password"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/new_blue"
         android:textSize="17sp"
         tools:ignore="RelativeOverlap" />
 

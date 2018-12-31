@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:theme="@style/AppTheme.NoActionBar.AppBarOverlay"
-        android:background="@color/White">
+        android:background="@color/faint_green">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -25,7 +25,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="35sp"
             android:layout_marginTop="160dp"
-            app:cardBackgroundColor="#00bcd4">
+            app:cardBackgroundColor="@color/new_blue">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -58,7 +58,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="35sp"
             android:layout_marginTop="20dp"
-            app:cardBackgroundColor="#00bcd4"
+            app:cardBackgroundColor="@color/new_blue"
             android:layout_below="@id/send_notice">
 
             <LinearLayout

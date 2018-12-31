@@ -3,6 +3,7 @@ package in.indekode.collegebuddy;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -31,6 +32,11 @@ public class TeacherAttendance extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_attendance);
+
+        Toolbar toolbar =  findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Update Attendance");
+
         yb = (Spinner) findViewById(R.id.ts_dept);
         s_n = (EditText) findViewById(R.id.s_r_n);
         s1_M = (EditText) findViewById(R.id.s1m);

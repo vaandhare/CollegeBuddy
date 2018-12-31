@@ -9,5 +9,6 @@
     <color name="green">#ff6659</color>
     <color name="ChildColor">#005bb2</color>
     <color name="White">#fff</color>
-
+    <color name="new_blue">#56669a</color>
+    <color name="faint_green">#b9f6ca</color>
 </resources>

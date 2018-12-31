@@ -167,7 +167,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
             case R.id.nav_share:
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
-                String shareBody = "College Buddy ";
+                String shareBody = "Download CollegeBuddy App https://play.google.com/store/apps/details?id=in.indekode.collegebuddy ";
                 sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
                 activity.startActivity(Intent.createChooser(sharingIntent, "Share via"));
                 break;

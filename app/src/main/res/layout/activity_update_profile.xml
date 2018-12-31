@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:background="@color/faint_green">
 
     <android.support.v7.widget.CardView
         android:layout_width="330dp"
@@ -14,7 +15,7 @@
         android:dividerHeight="0.0px"
         card_view:cardElevation="10dp"
         card_view:cardCornerRadius="10dp"
-        card_view:cardBackgroundColor="#39796b"
+        card_view:cardBackgroundColor="@color/new_blue"
         card_view:cardPreventCornerOverlap="false">
 
         <LinearLayout
