@@ -60,4 +60,6 @@
         <activity android:name=".UpdatePassword"></activity>
     </application>
 
+
+
 </manifest>

@@ -272,7 +272,7 @@
         android:textColor="@color/White"
         android:layout_below="@+id/s5m"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="125dp"/>
+        android:layout_marginStart="155dp"/>
 
 
         <TextView

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0077c2</color>
+    <color name="colorPrimary">#56669a</color>
     <color name="colorPrimaryDark">#445555</color>
     <color name="colorAccent">#42a5f5</color>
     <color name="Black">#000000</color>
@@ -10,5 +10,5 @@
     <color name="ChildColor">#005bb2</color>
     <color name="White">#fff</color>
     <color name="new_blue">#56669a</color>
-    <color name="faint_green">#b9f6ca</color>
+    <color name="faint_green">#fff</color>
 </resources>

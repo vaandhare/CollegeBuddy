@@ -13,7 +13,7 @@
         android:id="@+id/Login_to_std"
         android:layout_width="300dp"
         android:layout_height="80dp"
-        android:layout_marginStart="35sp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="160dp"
         app:cardBackgroundColor="@color/new_blue">
 
@@ -46,7 +46,7 @@
         android:id="@+id/Login_to_teacher"
         android:layout_width="300dp"
         android:layout_height="80dp"
-        android:layout_marginStart="35sp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         app:cardBackgroundColor="@color/new_blue"
         android:layout_below="@id/Login_to_std">
@@ -75,5 +75,36 @@
 
     </android.support.v7.widget.CardView>
 
+    <TextView
+        android:id="@+id/Private_policy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/privacy_policy"
+        android:textSize="17dp"
+        android:textColor="@color/new_blue"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/TermsAndCondn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/Private_policy"
+        android:text="@string/terms_and_conditions"
+        android:textSize="17dp"
+        android:textColor="@color/new_blue"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/Policies"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+       android:layout_above="@id/Private_policy"
+        android:gravity="center"
+        android:text="If you using this application means you'r accepting our Privacy Policy and Terms and Conditions"/>
 
 </RelativeLayout>
